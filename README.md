@@ -29,6 +29,6 @@ repetitivas, organizar y explotar sus datos, proyectar y controlar sus costos y 
 - https://www.cristalfinosj.com.ar
 - https://cristalmarialujan.com.ar/#!/-bienvenido-4/
 
-Seleccionamos las páginas mencionadas arriba porque se trata de página de eCommerce que ofrecen un tipo de producto similar al que ofrecerá SiO2. 
-Respecto a la funcionalidad de ls mismas, las elegimos por la posibilidad de registrar usuarios (clientes) para realizar las compras y de hacer consultas de whatsapp directamente desde la página. 
+Seleccionamos las páginas mencionadas arriba porque se trata de páginas de eCommerce que ofrecen un tipo de producto similar al que ofrecerá SiO2. 
+Respecto a la funcionalidad de las mismas, las elegimos por la posibilidad de registrar usuarios (clientes) para realizar las compras y/o de hacer consultas mediante whatsapp directamente desde la página. 
 Por último, nos gustó la estética de estas cinco páginas para tomar como referencia a la hora de desarrollar nuestro eCommerce.
