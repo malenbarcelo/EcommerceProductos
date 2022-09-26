@@ -17,7 +17,7 @@ Intgrantes del grupo:
 - Ignacio Arguello
 - Federico Alvarez Castillo
 - Araceli Ramos
-- Jiayu Yang
+- Jiayu Yang: 31 años, vivo en CABA, trabajo en una empresa constructora extranjera, en el sector de administración y RRHH.
 - Malén Barceló: 38 años, Ingeniera Industrial, neuquina viviendo en CABA. Trabajo de manera independiente ofreciendo  soluciones a medida para optimizar la operatoria de las empresas: automatizar tareas
 repetitivas, organizar y explotar sus datos, proyectar y controlar sus costos y finanzas.
 
