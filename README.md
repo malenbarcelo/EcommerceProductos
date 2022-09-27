@@ -13,7 +13,7 @@ Las ventas serán exclusivamente para mayoristas. Para poder hacer compras onlin
 
 ## Intgrantes del grupo:
 
-- Emiliano Mena
+- Emiliano Mena: 21 años, vivo en General Roca Rio Negro, soy estudiante de Digital House.
 - Ignacio Arguello
 - Federico Alvarez Castillo
 - Araceli Ramos
