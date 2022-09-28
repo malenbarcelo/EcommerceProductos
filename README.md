@@ -15,7 +15,8 @@ Las ventas serán exclusivamente para mayoristas. Para poder hacer compras onlin
 
 - Emiliano Mena: 21 años, vivo en General Roca Rio Negro, soy estudiante de Digital House.
 - Ignacio Arguello
-- Federico Alvarez Castillo
+- Federico Alvarez Castillo: 38 años, Lic en Administración, vivo en Mar Del Plata y trabajo en una empresa de consumo masivo (rubro cerveza)
+en la parte de ventas.
 - Araceli Ramos
 - Jiayu Yang: 31 años, vivo en CABA, trabajo en una empresa constructora extranjera, en el sector de administración y RRHH.
 - Malén Barceló: 38 años, Ingeniera Industrial, neuquina viviendo en CABA. Trabajo de manera independiente ofreciendo  soluciones a medida para optimizar la operatoria de las empresas: automatizar tareas
