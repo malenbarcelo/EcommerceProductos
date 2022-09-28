@@ -14,7 +14,7 @@ Las ventas serán exclusivamente para mayoristas. Para poder hacer compras onlin
 ## Intgrantes del grupo:
 
 - Emiliano Mena: 21 años, vivo en General Roca Rio Negro, soy estudiante de Digital House.
-- Ignacio Arguello
+- Ignacio Arguello: soy Ignacio Arguello Tengo 26 años, soy de buenos aires en este momento estoy desempleado y me dedico a estudiar programación. me gusta pasar tiempo en familia y entrenar. :P
 - Federico Alvarez Castillo: 38 años, Lic en Administración, vivo en Mar Del Plata y trabajo en una empresa de consumo masivo (rubro cerveza)
 en la parte de ventas.
 - Araceli Ramos
