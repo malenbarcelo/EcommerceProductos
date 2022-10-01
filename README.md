@@ -17,7 +17,7 @@ Las ventas serán exclusivamente para mayoristas. Para poder hacer compras onlin
 - Ignacio Arguello:Tengo 26 años, soy de buenos aires en este momento estoy desempleado y me dedico a estudiar programación. me gusta pasar tiempo en familia y entrenar.:P
 - Federico Alvarez Castillo: 38 años, Lic en Administración, vivo en Mar Del Plata y trabajo en una empresa de consumo masivo (rubro cerveza)
 en la parte de ventas.
-- Araceli Ramos
+- Araceli Ramos:24 años,vivo en Tigre y estoy estudiando en Digital House.
 - Jiayu Yang: 31 años, vivo en CABA, trabajo en una empresa constructora extranjera, en el sector de administración y RRHH.
 - Malén Barceló: 38 años, Ingeniera Industrial, neuquina viviendo en CABA. Trabajo de manera independiente ofreciendo  soluciones a medida para optimizar la operatoria de las empresas: automatizar tareas
 repetitivas, organizar y explotar sus datos, proyectar y controlar sus costos y finanzas.
