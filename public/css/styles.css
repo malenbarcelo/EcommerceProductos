@@ -6,7 +6,7 @@
 /*HEADER--------------------------------*/
 
 header{
-    background-color: rgb(210, 244, 244);
+    background-color: rgb(235, 114, 134);
     padding:10px
 }
 
@@ -23,6 +23,10 @@ header{
 
 .logo{
     width:50%
+}
+
+.img-logo{
+    height: 30px;
 }
 
 .fa-bars{
@@ -46,7 +50,8 @@ header{
 
 .banner{
     margin-top:300px;
-    margin-bottom:0px
+    margin-bottom:-5px;
+    padding:0px;
 }
 
 
@@ -126,12 +131,143 @@ p{
 
 
 
-@media (min-width:768px){
-    *{
-        background-color: red;
-    }
-
-    .burger-menu{
+@media (min-width:478px){
+    
+    .burger-menu, .magnifying-glass{
         display:none
     }
+
+    .img-logo{
+        height: 50px;
+    }
+
+    .logo{
+        width:25%
+    }
+
+    .search-bar-magnifying-glass{
+        display:block;
+        width:60%;
+        position:relative
+    }
+
+    .search-bar{
+        width:80%;
+        height: 30px;
+        border-radius:20px;
+        border: solid 1px white;
+        
+    }
+
+    .fa-magnifying-glass{
+        position:absolute;
+        left:75%;
+        top:10px
+    }
+
+    .link-whatsapp{
+        
+        top:90%;
+        left: 90%;
+    }
+
+    .main-header-bottom{
+        display:block;
+        padding-bottom:0px;
+        padding-bottom:0px
+    }
+
+    .menu{
+        display:flex;
+        justify-content: center;
+        column-gap:30px;
+        list-style: none;
+        padding:0px;
+        margin-bottom:5px;
+        margin-top:5px
+    }
+
+    .menu a{
+        text-decoration: none;
+        color:black;
+        padding:3px 5px 3px 5px;
+        color:white;
+        margin-bottom:0px;
+        font-size: 15px;
+    }
+
+    
+    .menu a:hover{
+        box-shadow: 0px 0px 6px rgb(119, 97, 141);
+        color:rgb(193, 186, 186);
+        transition: all 100ms;
+    }
+
+}
+
+@media (min-width:769px){
+    .img-logo{
+        height: 70px;
+    }
+
+    .fa-cart-shopping, .fa-user{
+        font-size: 25px;
+    }
+
+    header{
+        padding: 20px 30px 10px 30px ;
+
+    }
+
+        
+    .fa-whatsapp{
+        font-size:30px;
+        
+    }
+
+    .menu a{
+        
+        font-size: 18px;
+    }
+
+    footer{
+        padding-bottom: 50px;
+        padding-top: 50px;
+        font-size: 15px;
+    }
+
+    
+
+    .footer-div{
+        display:flex;
+        justify-content: space-around;
+    }
+
+    .footer-quien-somos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:250px;
+    }
+
+    .footer-quien-somos b{
+        margin-bottom: 5px;
+    }
+
+    
+
+    .div-footer-contact{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-horario-de-atencion, .div-footer-contact{
+        justify-content: center;
+    }
+
+    
+
+
+
+    
 }
