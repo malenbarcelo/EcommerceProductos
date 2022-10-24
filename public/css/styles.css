@@ -146,6 +146,37 @@ header{
 
 }
 
+/*FORMS--------------------------------------*/
+.form-title{
+    text-align: center;
+    margin-bottom:15px;
+    padding: 0px;
+}
+
+#form-register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+#name, #user, #cuit, #address, #city, #password, #password-valid{
+    border: 1px black solid;
+    border-radius:5px;
+    width: 60vw;
+    height: 30px;
+    margin: auto;
+    margin-bottom:10px;
+}
+
+button{
+    width:60px;
+    height: 25px;
+    font-size: 15px;
+    background-color: rgb(171, 166, 166);
+    border-radius: 5px;
+    
+}
 
 
 
@@ -353,6 +384,13 @@ p{
         color:rgb(207, 136, 136);
         transition: all 100ms;
     }
+
+    #name, #user, #cuit, #address, #city, #password, #password-valid{
+        
+        width: 400px;
+        
+    }
+    
 
 }
 
