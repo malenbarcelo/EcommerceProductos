@@ -4,6 +4,7 @@ URL del repositorio: https://github.com/malenbarcelo/grupo_3_SiO2.git
 
 
 ## Tablero de trabajo:
+
 https://trello.com/b/aYJrBHdx/sprint-2
 
 ## Temática: 

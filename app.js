@@ -1,16 +1,18 @@
 const express=require('express')
 const path = require('path')
 const app = express()
+const mainRoutes = require('./routes/mainRoutes.js')
+const productsRoutes = require('./routes/productsRoutes.js')
+const usersRoutes = require('./routes/usersRoutes.js')
 const publicPath =  path.resolve(__dirname, './public')
 const APP_PORT = 3000
 
 app.use(express.static(publicPath)) //le decimos que queremos la carpeta como un recurso de archivos estáticos
 
+app.set('view engine','ejs')
+
 app.listen(APP_PORT,() => console.log("Servidor corriendo en puerto " + APP_PORT))
 
-app.get('/',(req,res) =>res.sendFile(path.resolve('./views/index.html')))
-app.get('/product-detail',(req,res) =>res.sendFile(path.resolve('./views/productDetail.html')))
-app.get('/productCart',(req,res) =>res.sendFile(path.resolve('./views/productCart.html')))
-app.get('/register',(req,res) =>res.sendFile(path.resolve('./views/register.html')))
-app.get('/login',(req,res) =>res.sendFile(path.resolve('./views/login.html')))
-app.get('/header-y-footer',(req,res) =>res.sendFile(path.resolve('./views/header-y-footer.html')))
+app.use('/',mainRoutes)
+app.use('/',productsRoutes)
+app.use('/',usersRoutes)
