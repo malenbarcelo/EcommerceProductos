@@ -5,6 +5,12 @@ const productsController = {
     cart: (req,res) => {
         res.render('productCart')
     },
+    create: (req,res) => {
+        res.render('createProduct')
+    },
+    edit: (req,res) => {
+        res.render('editProduct')
+    },
 
 }
 

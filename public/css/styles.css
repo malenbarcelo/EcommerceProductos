@@ -111,12 +111,6 @@ header{
 }
 
 
-
-
-
-
-
-
 /*SECCION----------------------------------------*/
 
 /*BANNER------------------------------------------*/
@@ -153,7 +147,7 @@ header{
     padding: 0px;
 }
 
-#form-register{
+#form-register, #form-create{
     display: flex;
     flex-direction: column;
     align-items: center;
