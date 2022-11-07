@@ -156,7 +156,7 @@ header{
     color:grey
 }
 
-#name, #user, #cuit, #address, #city, #password, #password-valid, #product-name,#product-description,#product-capacity, #product-price, #product-category{
+#name, #user, #cuit, #address, #city, #password, #password-valid, #product-name,#product-description,#product-capacity, #product-price, #product-category, #email, #contraseña{
     border: 1px black solid;
     border-radius:5px;
     width: 60vw;
@@ -434,7 +434,7 @@ p{
         transition: all 100ms;
     }
 
-    #name, #user, #cuit, #address, #city, #password, #password-valid, #product-name,#product-description,#product-capacity, #product-price, #product-category,#product-image, .search-bar-edit-product{
+    #name, #user, #cuit, #address, #city, #password, #password-valid, #product-name,#product-description,#product-capacity, #product-price, #product-category,#product-image, .search-bar-edit-product, #email, #contraseña{
         width: 400px;
     }
 
@@ -505,9 +505,12 @@ p{
         justify-content: center;
     }
 
+}
 
+.login-registro{
+    width: auto;
+}
 
-
-
-
+.login-ingresar{
+    width: auto;
 }

@@ -5,6 +5,9 @@ const usersController = {
     login: (req,res) => {
         res.render('users/login',{title:'Login'})
     },
+    forgotPassword: (req,res) => {
+        res.render('users/forgotPassword',{title:'Login'})
+    },
 
 }
 
