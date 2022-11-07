@@ -1,15 +1,15 @@
 const productsController = {
     detail: (req,res) => {
-        res.render('productDetail')
+        res.render('products/productDetail',{title:'Detalle'})
     },
     cart: (req,res) => {
-        res.render('productCart')
+        res.render('products/productCart',{title:'Tu carrito de compras'})
     },
     create: (req,res) => {
-        res.render('createProduct')
+        res.render('products/createProduct.ejs',{title:'Crear producto'})
     },
     edit: (req,res) => {
-        res.render('editProduct')
+        res.render('products/editProduct',{title:'Editar producto'})
     },
 
 }

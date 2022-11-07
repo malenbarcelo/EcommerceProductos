@@ -38,9 +38,11 @@ header{
     display:none
 }
 
+
 .main-header-bottom{
     display:none
 }
+
 .tituloSuperior {
     text-align: center;
     padding-bottom: 5px;
@@ -51,8 +53,8 @@ header{
     /* border-bottom: solid 1px rgb(190, 190, 0); */
     border-bottom: solid 2px rgb(19, 19, 19);
     transition: all 450ms;
-}  
-/*CARRUSEL-------------------------------*/
+}
+/*CARROUSEL-------------------------------*/
 .carrousel{
     width: 100%;
 }
@@ -74,15 +76,13 @@ header{
     height: 100%;
 }
 
-
-
 .itemCarrouselArrows >  i:hover {
     cursor: pointer;
 }
 
 #itemCarrousel-1{
     background-color: rgb(226, 50, 50);
-    
+
 }
 
 #itemCarrousel-2{
@@ -109,9 +109,6 @@ header{
     width: 100%;
     height: 100%;
 }
-
-
-/*SECCION----------------------------------------*/
 
 /*BANNER------------------------------------------*/
 
@@ -147,16 +144,44 @@ header{
     padding: 0px;
 }
 
-#form-register, #form-create{
+#form-register, #form-edit-create{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
 }
 
-#name, #user, #cuit, #address, #city, #password, #password-valid{
+#product-category{
+    display:block;
+    color:grey
+}
+
+#name, #user, #cuit, #address, #city, #password, #password-valid, #product-name,#product-description,#product-capacity, #product-price, #product-category{
     border: 1px black solid;
     border-radius:5px;
+    width: 60vw;
+    height: 30px;
+    margin: auto;
+    margin-bottom:10px;
+}
+
+.div-product-to-edit{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+#product-to-edit{
+    border: 1px black solid;
+    border-radius:5px;
+    width: 35vw;
+    height: 25px;
+}
+
+
+
+#product-image{
     width: 60vw;
     height: 30px;
     margin: auto;
@@ -169,10 +194,42 @@ button{
     font-size: 15px;
     background-color: rgb(171, 166, 166);
     border-radius: 5px;
-    
+
 }
 
+#reset-create-product, #save-create-product{
+    width:140px;
+    height: 25px;
+    font-size: 15px;
+    background-color: rgb(171, 166, 166);
+    border-radius: 5px;
+}
+ /*PRODUCTS CART------------------------------*/
 
+ .grid-container{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+ }
+
+ .grid-title{
+    font-size: 13px;
+    margin-bottom:12px
+ }
+
+.grid-item-1{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 10;
+    
+ }
+
+ .flex-items{
+    display:flex;
+    justify-content: center;
+    column-gap:20px;
+    font-size:10px;
+ }
 
 
 /*FOOTER-----------------------------------------*/
@@ -192,7 +249,7 @@ footer{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    
+
 }
 
 .footer-titulo-horarios{
@@ -206,8 +263,8 @@ footer{
     align-items: center;
     justify-content: center;
     column-gap: 5px;
-    
-    
+
+
 }
 
 .footer-contact i{
@@ -215,7 +272,7 @@ footer{
     color: black;
     font-size: 12px;
     margin-bottom:5px;
-    
+
 }
 
 
@@ -223,7 +280,7 @@ p{
     text-align: center;
     margin: 0px;
     margin-bottom:5px;
-    
+
 }
 /*CONTENEDOR DE PRODUCTOS*/
 
@@ -275,7 +332,7 @@ p{
     margin-bottom: 0;
     transition: all 1s;
   }
-  
+
   .tarjetaCategoriaHome a {
     background-color: #0d151d;;
     text-decoration: none;
@@ -286,11 +343,11 @@ p{
   .tituloInferior:hover{
     box-shadow: 0px 0px 15px rgb(100, 100, 100);
   }
-  
+
   .botonCajaCateg:hover{
     color:rgb(2, 1, 1);
   }
-  
+
   .tarjetaCategoriaHome:hover {
     box-shadow: 0px 0px 15px rgb(100, 100, 100);
   }
@@ -308,7 +365,7 @@ p{
 
 
 @media (min-width:478px){
-    
+
     .burger-menu, .magnifying-glass{
         display:none
     }
@@ -332,7 +389,6 @@ p{
         height: 30px;
         border-radius:20px;
         border: solid 1px white;
-        
     }
 
     .fa-magnifying-glass{
@@ -342,7 +398,6 @@ p{
     }
 
     .link-whatsapp{
-        
         top:90%;
         left: 90%;
     }
@@ -372,19 +427,21 @@ p{
         font-size: 15px;
     }
 
-    
+
     .menu a:hover{
         box-shadow: 0px 0px 6px rgb(119, 97, 141);
         color:rgb(207, 136, 136);
         transition: all 100ms;
     }
 
-    #name, #user, #cuit, #address, #city, #password, #password-valid{
-        
+    #name, #user, #cuit, #address, #city, #password, #password-valid, #product-name,#product-description,#product-capacity, #product-price, #product-category,#product-image, .search-bar-edit-product{
         width: 400px;
-        
     }
-    
+
+    #product-to-edit{
+        width: 125px;
+
+    }
 
 }
 
@@ -402,14 +459,14 @@ p{
 
     }
 
-        
+
     .fa-whatsapp{
         font-size:30px;
-        
+
     }
 
     .menu a{
-        
+
         font-size: 18px;
     }
 
@@ -419,7 +476,7 @@ p{
         font-size: 15px;
     }
 
-    
+
 
     .footer-div{
         display:flex;
@@ -437,7 +494,7 @@ p{
         margin-bottom: 5px;
     }
 
-    
+
 
     .div-footer-contact{
         display: flex;
@@ -448,9 +505,9 @@ p{
         justify-content: center;
     }
 
-    
 
 
 
-    
+
+
 }

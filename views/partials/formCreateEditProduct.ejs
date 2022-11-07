@@ -1,0 +1,33 @@
+<form action="/" method="POST" id="form-edit-create" name="form-edit-create">
+    <div>
+        <input type="text" name="product-name" id="product-name" placeholder="Nombre del producto">
+    </div>
+
+    <div>
+        <input type="text" name="product-description" id="product-description" placeholder="Descripción">
+    </div>
+
+    <div>
+        <select name="product-category" id="product-category">
+            <option value="default" selected>Seleccione una categoría</option>
+    </div>
+
+    <div>
+        <input type="text" name="product-capacity" id="product-capacity" placeholder="Capacidad (ml.)">
+    </div>
+
+    <div>
+        <input type="number" name="product-price" id="product-price" placeholder="Precio (AR$)">
+    </div>
+
+    <div>
+        <b id="label-image">Imagen del producto</b></br>
+        <input type="file" name="product-image" id="product-image" accept=".jpg, .jpeg, .png" placeholder="Foto de perfil">
+    </div>
+
+    <div id="buttons">
+        <button type="reset" id="reset-create-product">Borrar datos</button>
+        <button type="submit" id="save-create-product">Guardar producto</button>
+    </div>
+
+</form>
