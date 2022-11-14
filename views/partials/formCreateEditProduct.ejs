@@ -1,6 +1,6 @@
 <form action="/" method="POST" id="form-edit-create" name="form-edit-create">
     <div>
-        <input type="text" name="product-name" id="product-name" placeholder="Nombre del producto">
+        <input type="text" name="item" id="item" placeholder="Código del producto">
     </div>
 
     <div>
@@ -10,14 +10,24 @@
     <div>
         <select name="product-category" id="product-category">
             <option value="default" selected>Seleccione una categoría</option>
-    </div>
-
-    <div>
-        <input type="text" name="product-capacity" id="product-capacity" placeholder="Capacidad (ml.)">
+            <option value="default">Chops</option>
+            <option value="default">Copas</option>
+            <option value="default">Jarras</option>
+            <option value="default">Tazas</option>
+            <option value="default">Vajilla</option>
+            <option value="default">Vasos</option>            
     </div>
 
     <div>
         <input type="number" name="product-price" id="product-price" placeholder="Precio (AR$)">
+    </div>
+
+    <div>
+        <input type="number" name="product-discount" id="product-discount" placeholder="Descuento (%)">
+    </div>
+
+    <div>
+        <input type="number" name="product-stock" id="product-stock" placeholder="Stock (unidades)">
     </div>
 
     <div>
@@ -29,5 +39,7 @@
         <button type="reset" id="reset-create-product">Borrar datos</button>
         <button type="submit" id="save-create-product">Guardar producto</button>
     </div>
+
+    
 
 </form>

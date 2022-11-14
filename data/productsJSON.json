@@ -1,18 +1,19 @@
 [
-    {"id":"1639HT","description":"Restaurant Basics - Vaso Mixing Glass 473 ml","category":"Vasos","useType":"Cerveza","discount":0,"price":1280.16,"image":"1639HT.jpg"},
-    {"id":"3808","description":"Belgian Beer - Copa cerveza 473 ml","category":"Copas","useType":"Cerveza","discount":0.1,"price":1310.64,"image":"3808.jpg"},
-    {"id":"5292","description":"Irish Coffee Recto 251 ml","category":"Tazas","useType":"Café","discount":0,"price":1374.14,"image":"5292.jpg"},
-    {"id":"5293","description":"Irish Coffee Cónico 244 ml","category":"Tazas","useType":"Café","discount":0,"price":1059.18,"image":"5293.jpg"},
-    {"id":"7504","description":"Vina - Copa Vino Alta 547 ml","category":"Copas","useType":"Vino","discount":0,"price":1470.66,"image":"7504.jpg"},
-    {"id":"9322","description":"MR Prism -  Copa vino 384 ml","category":"Copas","useType":"Vino","discount":0,"price":2750.82,"image":"9322.jpg"},
-    {"id":"9324","description":"MR Prism -  Copa vino 562 ml","category":"Copas","useType":"Vino","discount":0.1,"price":2837.18,"image":"9324.jpg"},
-    {"id":"9332","description":"MR Prism - Copa Champagne 237 ml","category":"Copas","useType":"Champagne","discount":0,"price":2694.94,"image":"9332.jpg"},
-    {"id":"14801HT","description":"English Pub Glass 592 ml","category":"Vasos","useType":"Cerveza","discount":0.2,"price":1026.16,"image":"14801HT.jpg"},
-    {"id":"14806HT","description":"English Pub Glass 473 ml","category":"Vasos","useType":"Cerveza","discount":0.3,"price":1003.3,"image":"14806HT.jpg"},
-    {"id":"14810HT","description":"English Pub Glass 296 ml","category":"Vasos","useType":"Cerveza","discount":0.35,"price":955.04,"image":"14810HT.jpg"},
-    {"id":"440539","description":"L Esprit  Du Vin Copa de cata 220 ml.","category":"Copas","useType":"Vino","discount":0,"price":1231.9,"image":"440539.jpg"},
-    {"id":"540628","description":"L Esprit  Du Vin Copa Vino 410 ml.","category":"Copas","useType":"Vino","discount":0,"price":1214.12,"image":"540628.jpg"},
-    {"id":"540673","description":"L Esprit  Du Vin Copa Flauta 210 ml.","category":"Copas","useType":"Champagne","discount":0,"price":1231.9,"image":"540673.jpg"},
-    {"id":"541625","description":"L Esprit  Du Vin Copa Vino  530 ml.","category":"Copas","useType":"Vino","discount":0,"price":1214.12,"image":"541625.jpg"}
-
+    {"id":"1639HT","description":"Restaurant Basics - Vaso Mixing Glass 473 ml","category":"Vasos","discount":0,"price":1280.16,"stock":1000,"image":"1639HT.jpg"},
+    {"id":"3808","description":"Belgian Beer - Copa cerveza 473 ml","category":"Copas","discount":0.1,"price":1310.64,"stock":2000,"image":"3808.jpg"},
+    {"id":"5292","description":"Irish Coffee Recto 251 ml","category":"Tazas","discount":0,"price":1374.14,"stock":3000,"image":"5292.jpg"},
+    {"id":"5293","description":"Irish Coffee Cónico 244 ml","category":"Tazas","discount":0,"price":1059.18,"stock":0,"image":"5293.jpg"},
+    {"id":"7504","description":"Vina - Copa Vino Alta 547 ml","category":"Copas","discount":0,"price":1470.66,"stock":400,"image":"7504.jpg"},
+    {"id":"9322","description":"MR Prism -  Copa vino 384 ml","category":"Copas","discount":0,"price":2750.82,"stock":380,"image":"9322.jpg"},
+    {"id":"9324","description":"MR Prism -  Copa vino 562 ml","category":"Copas","discount":0.1,"price":2837.18,"stock":250,"image":"9324.jpg"},
+    {"id":"9332","description":"MR Prism - Copa Champagne 237 ml","category":"Copas","discount":0,"price":2694.94,"stock":960,"image":"9332.jpg"},
+    {"id":"14801HT","description":"English Pub Glass 592 ml","category":"Vasos","discount":0.2,"price":1026.16,"stock":0,"image":"14801HT.jpg"},
+    {"id":"14806HT","description":"English Pub Glass 473 ml","category":"Vasos","discount":0.3,"price":1003.3,"stock":400,"image":"14806HT.jpg"},
+    {"id":"14810HT","description":"English Pub Glass 296 ml","category":"Vasos","discount":0.35,"price":955.04,"stock":380,"image":"14810HT.jpg"},
+    {"id":"440539","description":"L Esprit  Du Vin Copa de cata 220 ml.","category":"Copas","discount":0,"price":1231.9,"stock":250,"image":"440539.jpg"},
+    {"id":"540628","description":"L Esprit  Du Vin Copa Vino 410 ml.","category":"Copas","discount":0,"price":1214.12,"stock":960,"image":"540628.jpg"},
+    {"id":"540673","description":"L Esprit  Du Vin Copa Flauta 210 ml.","category":"Copas","discount":0,"price":1231.9,"stock":0,"image":"540673.jpg"},
+    {"id":"541625","description":"L Esprit  Du Vin Copa Vino  530 ml.","category":"Copas","discount":0,"price":1214.12,"stock":250,"image":"541625.jpg"}
 ]
+
+    

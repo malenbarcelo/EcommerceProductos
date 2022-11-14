@@ -1,0 +1,39 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<h3 class="products-title">Nuestros productos</h3>
+
+<div class="grid-products">
+    <% products.forEach(product => { %>
+        <a href="/products/product-detail/<%= product.id %> " class="product-detail-link">
+            <div class="product">
+                <div class="div-description">
+                    <p class="description"><%= product.description %></p>
+                </div>
+                <div class="div-product-image">
+                    <img src="./images/productos/<%= product.image %>" alt="" class="product-image">
+                    <% if (product.stock==0) { %>
+                        <div class="div-stock">
+                            <p class="stock">Sin stock</p>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="products-data">
+                    <div class="div-price-discount">
+                        <p class="espacio-blanco"></p>
+                        <p class="price">$<%= product.price %></p>
+                        <% if (product.discount!=0) { %>
+                            <p class="discount"><%= product.discount * 100 %>% OFF</p>
+                        <% } %>
+                    </div>
+                    <div class="div-btn-add-to-cart">
+                        <button type="submit" class="btn-add-to-cart">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </a>
+    <% }) %>
+</div>
+
+<%- include('../partials/linkWhatsApp') %>
+<%- include('../partials/footer') %>

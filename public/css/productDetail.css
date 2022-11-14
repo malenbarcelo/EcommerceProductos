@@ -1,0 +1,24 @@
+/*img {
+    width: 100px;    
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}*/
+
+.img-product-detail{
+    width: 100px;
+}
+
+.scroll{
+    background-color: aliceblue;
+    box-shadow: .1rem .2rem .3rem #333;
+}
+
+.scroll img{
+    filter: invert(15%);
+}
+
+.btn-agregar{
+    width: 200px;
+    
+}

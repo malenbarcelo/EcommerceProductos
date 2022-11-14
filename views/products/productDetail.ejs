@@ -1,18 +1,20 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-            <div class="contenedor" id="contenedor">
-        </div>
-        <img src="./images/productos/1639HT.jpg"
-        alt="Producto 1" > 
+<img src="/images/productos/<%= selectedProduct.image %>" class="img-product-detail" alt="Producto 1" > 
         <div class="informacion">
-            <p>Producto 1</p>
-            <p class="Precio">$999</p>
+            <p>Producto <%= selectedProduct.id %>  </p>
+            <p class="Precio">$ <%= selectedProduct.price %></p>
             <p>Detalle Del Producto</p>
             <button class="btn-agregar"> Agregar al carrito </button> 
-           </div>
-        <script src="/app.js"> </script>
-        </body>
-        </html>
+        </div>
+        
+
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>
+
+
+
+
+
+
