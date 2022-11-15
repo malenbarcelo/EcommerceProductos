@@ -1,13 +1,12 @@
-# Retro Grupo 3 - SiO2 - Sprint 2
+# Retro Grupo 3 - SiO2 - Sprint 3
 
 ## 1. Comenzar a hacer
 - Plasmar lineamientos generales por escrito
-- Ser más proactivos a la hora de resolver imprevistos
-- Coordinar dos reuniones semanales para lograr una comunicación más fluida
 
 ## 2. Hacer más
 - Comunicación más fluida con los profesores
 - Reuniones más frecuentes
+- Participación más activa en GitHub
 
 ## 3. Continuar haciendo
 - Continuar con la comunicación fluida dentro del grupo
@@ -17,7 +16,3 @@
 
 ## 5. Dejar de hacer
 - Dejar las cosas para último momento
-
-
-
-

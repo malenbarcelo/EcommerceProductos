@@ -4,6 +4,49 @@
 <!-- Formulario de creación de producto-->
 <h3 class="form-title">Datos del producto a crear</h3>
 
-<%- include('../partials/formCreateEditProduct') %>
+<form action="/products" method="POST" id="form-edit-create" name="form-edit-create">
+    <div>
+        <input type="text" name="id" id="id" placeholder="Código del producto">
+    </div>
+
+    <div>
+        <input type="text" name="description" id="product-description" placeholder="Descripción">
+    </div>
+
+    <div>
+        <select name="category" id="product-category">
+            <option value="default" selected>Seleccione una categoría</option>
+            <option value="default">Chops</option>
+            <option value="default">Copas</option>
+            <option value="default">Jarras</option>
+            <option value="default">Tazas</option>
+            <option value="default">Vajilla</option>
+            <option value="default">Vasos</option>
+    </div>
+
+    <div>
+        <input type="number" name="discount" id="product-discount" placeholder="Descuento (%)">
+    </div>
+
+    <div>
+        <input type="number" name="price" id="product-price" placeholder="Precio (AR$)">
+    </div>
+
+    <div>
+        <input type="number" name="stock" id="product-stock" placeholder="Stock (unidades)">
+    </div>
+
+    <div>
+        <b id="label-image">Imagen del producto</b><br>
+        <input type="file" name="image" id="product-image" accept=".jpg, .jpeg, .png" placeholder="Foto de perfil">
+    </div>
+
+    <div id="buttons">
+        <button type="reset" id="reset-create-product">Borrar datos</button>
+        <button type="submit" id="save-create-product">Guardar producto</button>
+    </div>
+
+</form>
+
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>
