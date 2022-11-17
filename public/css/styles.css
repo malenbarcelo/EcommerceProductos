@@ -144,7 +144,7 @@ header{
     padding: 0px;
 }
 
-#form-register, #form-edit-create{
+#form-register, #form-create{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,7 +156,16 @@ header{
     color:grey
 }
 
-#name, #user, #cuit, #address, #city, #password, #password-valid, #item,#product-description,#product-capacity, #product-price, #product-category,#product-discount,#product-stock, #email, #contraseña{
+#name, #user, #cuit, #address, #city, #password, #password-valid, #id,#description,#product-capacity, #product-price, #product-category,#product-discount,#product-stock, #email, #contraseña{
+    border: 1px black solid;
+    border-radius:5px;
+    width: 60vw;
+    height: 30px;
+    margin: auto;
+    margin-bottom:10px;
+}
+
+#id, #description, #category, #price, #discount, #stock, #image{
     border: 1px black solid;
     border-radius:5px;
     width: 60vw;
@@ -179,8 +188,6 @@ header{
     height: 25px;
 }
 
-
-
 #product-image{
     width: 60vw;
     height: 30px;
@@ -195,6 +202,14 @@ button{
     background-color: rgb(171, 166, 166);
     border-radius: 5px;
 
+}
+
+.create-form-button{
+    width:200px;
+    height: 25px;
+    font-size: 15px;
+    background-color: rgb(171, 166, 166);
+    border-radius: 5px;
 }
 
 #reset-create-product, #save-create-product{
@@ -435,6 +450,10 @@ p{
     }
 
     #name, #user, #cuit, #address, #city, #password, #password-valid, #item,#product-description,#product-capacity, #product-price, #product-category,#product-discount,#product-stock,#product-image, .search-bar-edit-product, #email, #contraseña{
+        width: 400px;
+    }
+
+    #id, #description, #category, #price, #discount, #stock, #image{
         width: 400px;
     }
 

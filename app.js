@@ -8,6 +8,8 @@ const publicPath =  path.resolve('./public')
 const APP_PORT = 3000
 
 app.use(express.static(publicPath)) //le decimos que queremos la carpeta como un recurso de archivos estáticos
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
 app.set('view engine','ejs')
 

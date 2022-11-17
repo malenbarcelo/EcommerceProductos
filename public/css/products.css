@@ -29,6 +29,11 @@
     color:black
 }
 
+.product-detail-link:hover{
+    text-decoration: none;
+    color:black
+}
+
 .div-product-image{
     position:relative;
     text-align: center;
@@ -43,15 +48,17 @@
     position:absolute;
     border-radius: 5px;
     font-size: 13px;
-    padding-left:5px;
-    padding-right:5px;
+    padding-left:2px;
+    padding-right:2px;
     padding-bottom:0px;
     padding-top:5px;
     bottom:3px;
-    left:180px;
+    left:160px;
+    width:75px;
+    height: 30px;
+    
     
 }
-
 
 .products-data{
     margin-top:5px;
@@ -65,7 +72,8 @@
     width:150px;
     border:none;
     background-color: rgb(171, 165, 165);
-    transition:all 0.5s
+    transition:all 0.5s;
+    border-radius:5px
 }
 .btn-add-to-cart:hover{
     background-color: rgb(235, 207, 212);
@@ -88,7 +96,8 @@
 
 .discount,.espacio-blanco{
     width:35%;
-    color:rgb(64, 179, 64)
+    color:rgb(64, 179, 64);
+    font-size: 12px;
 }
 
 .discount{

@@ -1,10 +1,10 @@
 <form action="/" method="POST" id="form-edit-create" name="form-edit-create">
     <div>
-        <input type="text" name="item" id="item" placeholder="Código del producto">
+        <input type="text" name="id" id="id" placeholder="Código del producto">
     </div>
 
     <div>
-        <input type="text" name="product-description" id="product-description" placeholder="Descripción">
+        <input type="text" name="description" id="description" placeholder="Descripción">
     </div>
 
     <div>
@@ -32,9 +32,12 @@
 
     <div>
         <b id="label-image">Imagen del producto</b></br>
-        <input type="file" name="product-image" id="product-image" accept=".jpg, .jpeg, .png" placeholder="Foto de perfil">
+        <input type="file" name="product-images" id="product-images" accept=".jpg, .jpeg, .png" placeholder="Foto de perfil">
     </div>
 
+    
+
+    
     <div id="buttons">
         <button type="reset" id="reset-create-product">Borrar datos</button>
         <button type="submit" id="save-create-product">Guardar producto</button>
