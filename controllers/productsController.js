@@ -11,8 +11,10 @@ const productsController = {
     productDetail: (req,res) => {
         let productId = req.params.productId
         let selectedProduct = products.find(product => product.id == productId)
-        res.render('products/productDetail',{title:'Detalle del producto',selectedProduct})
-
+        if(selectedProduct == undefined){
+            return res.send('El producto no existe')
+        }
+        return res.render('products/productDetail',{title:'Detalle del producto',selectedProduct})
     },
     cart: (req,res) => {
         res.render('products/productCart',{title:'Tu carrito de compras'})
@@ -25,15 +27,48 @@ const productsController = {
         camposNuevoProducto.image = req.file.filename
 		products.push(camposNuevoProducto)
 		fs.writeFileSync(productsFilePath,JSON.stringify(products))
-        res.render('products/products',{title:'Productos',products:products})
+        return res.redirect('/products')
 
     },
     edit: (req,res) => {
-        res.render('products/editProduct',{title:'Editar producto'})
+        const productId = req.params.productId
+        const productToEdit = products.find(product => product.id == productId)
+        if(productToEdit == undefined){
+            return res.send('El producto no existe')
+        }
+        return res.render('products/editProduct',{title:'Editar producto',product:productToEdit})
+    },
+    update: (req, res) => {        
+		let productEdited = req.body
+        let productId = req.body.id
+        let productToEdit =products.find(product => product.id == productId)
+        let index = products.indexOf(productToEdit);
+        if(!req.file){
+            productEdited.image=products[index].image
+        }else{
+            productEdited.image=req.file.filename
+        }
+        
+        products[index]=productEdited
+        fs.writeFileSync(productsFilePath,JSON.stringify(products))
+        return res.redirect('/products')
     },
     delete: (req,res) => {
-        res.render('products/deleteProduct',{title:'Borrar producto'})
+        const productId = req.params.productId
+        const productToDelete = products.find(product => product.id == productId)
+        if(productToDelete == undefined){
+            return res.send('El producto no existe')
+        }
+        return res.render('products/deleteProduct',{title:'Borrar producto',product:productToDelete})
     },
+    destroy: (req,res) =>{
+        let productId = req.body.id
+        let productToDelete =products.find(product => product.id == productId)
+        let index = products.indexOf(productToDelete);
+        console.log(req.body)
+        return res.send(req.body)
+
+    }
 
 
 

@@ -6,12 +6,14 @@ const productsRoutes = require('./routes/productsRoutes.js')
 const usersRoutes = require('./routes/usersRoutes.js')
 const publicPath =  path.resolve('./public')
 const APP_PORT = 3000
+const methodOverride = require('method-override')
+
 
 app.use(express.static(publicPath)) //le decimos que queremos la carpeta como un recurso de archivos estáticos
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-
 app.set('view engine','ejs')
+app.use(methodOverride('_method'))
 
 app.listen(APP_PORT,() => console.log("Servidor corriendo en puerto " + APP_PORT))
 

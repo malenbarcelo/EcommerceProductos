@@ -1,16 +1,73 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<!-- Formulario de registro-->
-<h3 class="form-title">Seleccione producto a editar</h3>
+<!-- Formulario de creación de producto-->
 
-<form action="/" method="POST" id="search-product" name="search-product">
-    <div class="div-product-to-edit">
-        <input type="text" name="product-to-edit" id="product-to-edit" placeholder="Item">
-        <button type="submit" id="btn-search-product">Buscar</button>
+
+<h3 class="form-title">Datos del producto a editar</h3>
+
+<form method="POST" action="/products?_method=PUT" enctype="multipart/form-data" id="form-create">
+    <div class="div-name">
+        <label for="id" class="label"><b>Código</b></label>
+        <input type="text" id="id" name="id" placeholder="Código del producto" class="form-input" value = "<%= product.id %>" readonly>
+    </div>
+    <div class="div-description">
+        <label for="description" class="label"><b>Descripción</b></label>
+        <input type="text" id="description" name="description" placeholder="Descripción" class="form-input" value = "<%= product.description %>">
+    </div>
+    <div>
+        <label for="category" class="label"><b>Categoría</b></label>
+        <select name="category" id="category">
+            <option <% if (product.category == 'Chops') { %>
+                selected
+            <% } %> value="chops">Chops</option>
+            <option <% if (product.category == 'Copas') { %>
+                selected
+            <% } %> value="copas">Copas</option>
+            <option <% if (product.category == 'Jarras') { %>
+                selected
+            <% } %>  value="jarras">Jarras</option>
+            <option <% if (product.category == 'Tazas') { %>
+                selected
+            <% } %>  value="tazas">Tazas</option>
+            <option <% if (product.category == 'Vajilla') { %>
+                selected
+            <% } %> value="vajilla">Vajilla</option>
+            <option <% if (product.category == 'Vasos') { %>
+                selected
+            <% } %> value="vasos">Vasos</option>
+        </select>
+    </div>
+    <div class="div-price">
+        <label for="price" class="label"><b>Precio ($)</b></label>
+        <input type="number" id="price" name="price" placeholder="Precio (AR$)" class="form-input" value = "<%= product.price %>">
+    </div>
+    <div class="div-discount">
+        <label for="discount" class="label"><b>Descuento (%)</b></label>
+        <input type="number" id="discount" name="discount" placeholder="Descuento (%) " class="form-input" value = "<%= product.discount *100%>">
+    </div>
+
+    <div class="div-stock-form">
+        <label for="stock" class="label"><b>Stock (unidades)</b></label>
+        <input type="number" id="stock" name="stock" placeholder="Stock (unidades)" class="form-input" value = "<%= product.stock %>">
+    </div>
+
+    </div>
+    <img src="/images/productos/<%= product.image %>" alt="<%= product.image %>" class="product-image">
+    </div>
+
+    
+    <div class="div-image">
+        <label for="image" class="label"><b>Modificar imagen</b></label>
+        <input type="file" id="image" name="image" class="form-input">
+    </div>
+    
+
+    <div class="div-buttons">
+        <button type="reset" class="create-form-button">Borrar datos</button>
+        <button type="submit" class="create-form-button">Guardar producto</button>
     </div>
 </form>
-<h3 class="form-title">Datos del producto</h3>
-<%- include('../partials/formCreateEditProduct') %>
+
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>

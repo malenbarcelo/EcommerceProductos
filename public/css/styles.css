@@ -140,7 +140,8 @@ header{
 /*FORMS--------------------------------------*/
 .form-title{
     text-align: center;
-    margin-bottom:15px;
+    margin-bottom:20px;
+    margin-top:20px;
     padding: 0px;
 }
 
@@ -204,7 +205,7 @@ button{
 
 }
 
-.create-form-button{
+.create-form-button, .delete-form-button{
     width:200px;
     height: 25px;
     font-size: 15px;
