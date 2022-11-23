@@ -2,11 +2,19 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath = path.resolve('./data/productsJSON.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     allProducts: (req,res) => {
-        res.render('products/products',{title:'Productos',products:products})
+        let categoryRoute = '/products/products-filtered/'
+        res.render('products/products',{title:'Productos',products:products, categoryRoute:categoryRoute})
+    },
+    filteredProducts: (req,res) => {
+        let categoryRoute = './'
+        let productCategory = req.params.productCategory
+        let categoryTitle = productCategory.charAt(0).toUpperCase() + productCategory.slice(1)
+        let productsFiltered = products.filter(product => product.category == productCategory)
+        return res.render('products/productsFiltered',{title:productCategory,products:productsFiltered,categoryRoute:categoryRoute, categoryTitle: categoryTitle})
     },
     productDetail: (req,res) => {
         let productId = req.params.productId
@@ -25,6 +33,7 @@ const productsController = {
     store: (req, res) => {
 		const camposNuevoProducto = req.body
         camposNuevoProducto.image = req.file.filename
+        camposNuevoProducto.discount = req.body.discount/100
 		products.push(camposNuevoProducto)
 		fs.writeFileSync(productsFilePath,JSON.stringify(products))
         return res.redirect('/products')
@@ -40,6 +49,7 @@ const productsController = {
     },
     update: (req, res) => {        
 		let productEdited = req.body
+        productEdited.discount = req.body.discount /100
         let productId = req.body.id
         let productToEdit =products.find(product => product.id == productId)
         let index = products.indexOf(productToEdit);
@@ -61,13 +71,17 @@ const productsController = {
         }
         return res.render('products/deleteProduct',{title:'Borrar producto',product:productToDelete})
     },
-    destroy: (req,res) =>{
-        let productId = req.body.id
-        let productToDelete =products.find(product => product.id == productId)
+    destroy: (req, res) => {
+        let productToDeleteId = req.body.id
+        let productToDelete =products.find(product => product.id == productToDeleteId)
         let index = products.indexOf(productToDelete);
-        console.log(req.body)
-        return res.send(req.body)
 
+        products.splice(index,1)
+        fs.writeFileSync(productsFilePath,JSON.stringify(products))
+        return res.redirect('/products')
+        
+        
+        
     }
 
 

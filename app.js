@@ -19,4 +19,4 @@ app.listen(APP_PORT,() => console.log("Servidor corriendo en puerto " + APP_PORT
 
 app.use('/',mainRoutes)
 app.use('/products',productsRoutes)
-app.use('/',usersRoutes)
+app.use('/users',usersRoutes)

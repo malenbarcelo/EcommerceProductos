@@ -379,6 +379,10 @@ p{
     text-align: center;
   }
 
+.conteCarrousel{
+    height: 600px;
+}
+
 
 @media (min-width:478px){
 
@@ -450,6 +454,7 @@ p{
         transition: all 100ms;
     }
 
+    
     #name, #user, #cuit, #address, #city, #password, #password-valid, #item,#product-description,#product-capacity, #product-price, #product-category,#product-discount,#product-stock,#product-image, .search-bar-edit-product, #email, #contraseña{
         width: 400px;
     }
