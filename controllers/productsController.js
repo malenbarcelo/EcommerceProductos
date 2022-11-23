@@ -76,7 +76,6 @@ const productsController = {
         let productToDeleteId = req.body.id
         let productToDelete =products.find(product => product.id == productToDeleteId)
         let index = products.indexOf(productToDelete);
-
         products.splice(index,1)
         fs.writeFileSync(productsFilePath,JSON.stringify(products))
         return res.redirect('/products')
@@ -84,11 +83,9 @@ const productsController = {
 
     destroy : (req, res) => {
         const id = req.body.id;
-        const filteredProduct = products.filter(products=> products.id != id)
-        console.log(filteredProduct)
-        fs.writeFileSync(productsFilePath,JSON.stringify(filteredProduct));
-        res.redirect('/')
+        products = products.filter(products=> products.id != id)
+        fs.writeFileSync(productsFilePath,JSON.stringify(products));
+        res.redirect('/products')
     }
 }
-
 module.exports = productsController
