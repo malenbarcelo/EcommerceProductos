@@ -72,18 +72,10 @@ const productsController = {
         }
         return res.render('products/deleteProduct',{title:'Borrar producto',product:productToDelete})
     },
-    /*destroy: (req, res) => {
-        let productToDeleteId = req.body.id
-        let productToDelete =products.find(product => product.id == productToDeleteId)
-        let index = products.indexOf(productToDelete);
-        products.splice(index,1)
-        fs.writeFileSync(productsFilePath,JSON.stringify(products))
-        return res.redirect('/products')
-    }*/
-
     destroy : (req, res) => {
         const id = req.body.id;
         products = products.filter(products=> products.id != id)
+        console.log(id)
         fs.writeFileSync(productsFilePath,JSON.stringify(products));
         res.redirect('/products')
     }

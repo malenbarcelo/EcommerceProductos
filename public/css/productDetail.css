@@ -1,12 +1,8 @@
-/*img {
-    width: 100px;    
-    object-fit: cover;
+.img-product-detail{
+    width: 125px;
     display: block;
     margin: auto;
-}*/
-
-.img-product-detail{
-    width: 100px;
+    
 }
 
 .scroll{
@@ -20,5 +16,5 @@
 
 .btn-agregar{
     width: 200px;
-    
-}
+   display: block;
+   margin:auto;}
