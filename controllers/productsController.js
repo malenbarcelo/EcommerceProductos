@@ -45,6 +45,7 @@ const productsController = {
         if(productToEdit == undefined){
             return res.send('El producto no existe')
         }
+        
         return res.render('products/editProduct',{title:'Editar producto',product:productToEdit})
     },
     update: (req, res) => {        

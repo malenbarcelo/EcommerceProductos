@@ -18,19 +18,20 @@
     <div>
         <label for="category" class="label"><b>Categoría</b></label>
         <select name="category" id="category">
-            <option <% if (product.category == 'Chops') { %>
+            
+            <option <% if (product.category == 'chops') { %>
                 selected
             <% } %> value="chops">Chops</option>
-            <option <% if (product.category == 'Copas') { %>
+            <option <% if (product.category == 'copas') { %>
                 selected
             <% } %> value="copas">Copas</option>
-            <option <% if (product.category == 'Jarras') { %>
+            <option <% if (product.category == 'jarras') { %>
                 selected
             <% } %>  value="jarras">Jarras</option>
-            <option <% if (product.category == 'Tazas') { %>
+            <option <% if (product.category == 'tazas') { %>
                 selected
             <% } %>  value="tazas">Tazas</option>
-            <option <% if (product.category == 'Vajilla') { %>
+            <option <% if (product.category == 'vajilla') { %>
                 selected
             <% } %> value="vajilla">Vajilla</option>
             <option <% if (product.category == 'Vasos') { %>
