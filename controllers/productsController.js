@@ -45,10 +45,10 @@ const productsController = {
         if(productToEdit == undefined){
             return res.send('El producto no existe')
         }
-        
+
         return res.render('products/editProduct',{title:'Editar producto',product:productToEdit})
     },
-    update: (req, res) => {        
+    update: (req, res) => {
 		let productEdited = req.body
         productEdited.discount = req.body.discount /100
         let productId = req.body.id
@@ -59,7 +59,7 @@ const productsController = {
         }else{
             productEdited.image=req.file.filename
         }
-        
+
         products[index]=productEdited
         fs.writeFileSync(productsFilePath,JSON.stringify(products))
         return res.redirect('/products')
@@ -72,7 +72,7 @@ const productsController = {
         }
         return res.render('products/deleteProduct',{title:'Borrar producto',product:productToDelete})
     },
-    destroy: (req, res) => {
+    /*destroy: (req, res) => {
         let productToDeleteId = req.body.id
         let productToDelete =products.find(product => product.id == productToDeleteId)
         let index = products.indexOf(productToDelete);
@@ -80,13 +80,15 @@ const productsController = {
         products.splice(index,1)
         fs.writeFileSync(productsFilePath,JSON.stringify(products))
         return res.redirect('/products')
-        
-        
-        
+    }*/
+
+    destroy : (req, res) => {
+        const id = req.body.id;
+        const filteredProduct = products.filter(products=> products.id != id)
+        console.log(filteredProduct)
+        fs.writeFileSync(productsFilePath,JSON.stringify(filteredProduct));
+        res.redirect('/')
     }
-
-
-
 }
 
 module.exports = productsController
