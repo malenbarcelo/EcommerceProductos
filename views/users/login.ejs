@@ -1,25 +1,36 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<h3 class="form-title">Ingresar</h3>
+<h3 class="login-form-title">Ingresar</h3>
 
-<form action="/users/login" method="POST" id="form-register" name="form-register">
-    <div>
-        <input type="text" name="email" id="email" placeholder="Email">
+<form action="/users/login" method="POST" name="form-register">
+    <div class="login-form-div">
+        <input type="text" name="email" placeholder="Email" class="login-form-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>">
+        <% if (locals.errors && errors.email) { %>
+            <i class="fas fa-exclamation"></i>
+            <div class="form-error">
+                <%= errors.email.msg %> 
+            </div>
+        <% } %>
     </div>
 
-    <div>
-        <input type="text" name="password" id="password" placeholder="Contraseña">
+    <div class="login-form-div">
+        <input type="text" name="password" placeholder="Contraseña" class="login-form-input <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+        <% if (locals.errors && errors.password) { %>
+            <i class="fas fa-exclamation"></i>
+            <div class="form-error">
+                <%= errors.password.msg %> 
+            </div>
+        <% } %>
     </div>
 
-    <div>
+    <div class="login-form-div login-text">
       <p><a href="/forgotPassword">¿Has olvidado la contraseña?</a></p>
-      <br>
+      <p><a href="/users/register">Registrarme</a></p>      
     </div>
 
-    <div id="buttons">
-        <button type="reset" class="login-registro" onclick = "location='/register'">Registrarse</button>
-        <button type="submit" class="login-ingresar">Ingresar</button>
+    <div class="login-form-buttons">
+        <button type="submit" class="login-form-button">Ingresar</button>
     </div>
 
 </form>

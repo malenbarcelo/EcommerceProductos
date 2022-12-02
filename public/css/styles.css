@@ -1,6 +1,7 @@
 /*GENERAL-------------------------------*/
 *{
     font-family:Arial, Helvetica, sans-serif;
+    
 }
 
 /*HEADER--------------------------------*/
@@ -54,6 +55,10 @@ header{
     border-bottom: solid 2px rgb(19, 19, 19);
     transition: all 450ms;
 }
+
+
+
+
 /*CARROUSEL-------------------------------*/
 .carrousel{
     width: 100%;
@@ -137,89 +142,7 @@ header{
 
 }
 
-/*FORMS--------------------------------------*/
-.form-title{
-    text-align: center;
-    margin-bottom:20px;
-    margin-top:20px;
-    padding: 0px;
-}
 
-#form-register, #form-create{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 50px;
-}
-
-#product-category{
-    display:block;
-    color:grey
-}
-
-#name, #user, #cuit, #address, #city, #password, #password-valid, #id,#description,#product-capacity, #product-price, #product-category,#product-discount,#product-stock, #email, #contraseña{
-    border: 1px black solid;
-    border-radius:5px;
-    width: 60vw;
-    height: 30px;
-    margin: auto;
-    margin-bottom:10px;
-}
-
-#id, #description, #category, #price, #discount, #stock, #image{
-    border: 1px black solid;
-    border-radius:5px;
-    width: 60vw;
-    height: 30px;
-    margin: auto;
-    margin-bottom:10px;
-}
-
-.div-product-to-edit{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 10px;
-}
-
-#product-to-edit{
-    border: 1px black solid;
-    border-radius:5px;
-    width: 35vw;
-    height: 25px;
-}
-
-#product-image{
-    width: 60vw;
-    height: 30px;
-    margin: auto;
-    margin-bottom:10px;
-}
-
-button{
-    width:60px;
-    height: 25px;
-    font-size: 15px;
-    background-color: rgb(171, 166, 166);
-    border-radius: 5px;
-
-}
-
-.create-form-button, .delete-form-button{
-    width:200px;
-    height: 25px;
-    font-size: 15px;
-    background-color: rgb(171, 166, 166);
-    border-radius: 5px;
-}
-
-#reset-create-product, #save-create-product{
-    width:140px;
-    height: 25px;
-    font-size: 15px;
-    background-color: rgb(171, 166, 166);
-    border-radius: 5px;
-}
  /*PRODUCTS CART------------------------------*/
 
  .grid-container{
@@ -434,7 +357,38 @@ p{
         list-style: none;
         padding:0px;
         margin-bottom:5px;
-        margin-top:5px
+        margin-top:5px;
+        
+    }
+
+    .menu-products{
+        position:relative;
+        transition:all 0.5s
+        
+    }
+    .submenu-products{
+        list-style: none;
+        margin:auto;
+        padding:0px;
+        display:none;
+        position: absolute;
+        transition:all 0.5s;
+        background-color: rgb(247, 231, 234);
+        padding-bottom:5px;
+        z-index: 1;       
+        
+    }
+
+    .submenu{
+        width:100px;
+        text-align: center;
+        background-color: rgb(247, 231, 234);
+        margin-top:3px
+        
+    }
+
+    .menu-products:hover > .submenu-products{
+        display:block
     }
 
     .menu a{
@@ -446,6 +400,8 @@ p{
         font-size: 15px;
     }
 
+    
+
 
     .menu a:hover{
         box-shadow: 0px 0px 6px rgb(119, 97, 141);
@@ -454,14 +410,7 @@ p{
     }
 
     
-    #name, #user, #cuit, #address, #city, #password, #password-valid, #item,#product-description,#product-capacity, #product-price, #product-category,#product-discount,#product-stock,#product-image, .search-bar-edit-product, #email, #contraseña{
-        width: 400px;
-    }
-
-    #id, #description, #category, #price, #discount, #stock, #image{
-        width: 400px;
-    }
-
+    
     #product-to-edit{
         width: 125px;
 

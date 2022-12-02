@@ -4,17 +4,16 @@ const path = require('path');
 const productsFilePath = path.resolve('./data/productsJSON.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const productsController = {
+const productsController = {    
     allProducts: (req,res) => {
-        let categoryRoute = '/products/products-filtered/'
-        res.render('products/products',{title:'Productos',products:products, categoryRoute:categoryRoute})
+        res.render('products/products',{title:'Productos',products:products})
     },
     filteredProducts: (req,res) => {
-        let categoryRoute = './'
+        let categoryRouteFiltered = './'
         let productCategory = req.params.productCategory
         let categoryTitle = productCategory.charAt(0).toUpperCase() + productCategory.slice(1)
         let productsFiltered = products.filter(product => product.category == productCategory)
-        return res.render('products/productsFiltered',{title:productCategory,products:productsFiltered,categoryRoute:categoryRoute, categoryTitle: categoryTitle})
+        return res.render('products/productsFiltered',{title:productCategory,products:productsFiltered,categoryTitle: categoryTitle})
     },
     productDetail: (req,res) => {
         let productId = req.params.productId
@@ -39,7 +38,7 @@ const productsController = {
         return res.redirect('/products')
 
     },
-    edit: (req,res) => {
+    edit: (req,res) => {        
         const productId = req.params.productId
         const productToEdit = products.find(product => product.id == productId)
         if(productToEdit == undefined){

@@ -24,7 +24,8 @@
 }
 
 .product:hover{
-    border: black solid
+    border: black solid;
+    
 }
 
 .div-description{
@@ -108,7 +109,7 @@
 .btn-edit,.btn-delete{
     font-size:15px;
     color:black;
-    transition:all 0.5s;
+    transition: all 0.5ms;
     text-decoration: none;
 }
 

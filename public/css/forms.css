@@ -1,0 +1,68 @@
+.register-form-title,.login-form-title{
+    text-align: center;
+    margin-top:20px;
+    padding: 0px;
+}
+
+.register-form-input,.login-form-input{
+    border: 1px rgb(165, 164, 164) solid;
+    border-radius:5px;
+    width: 60vw;
+    height: 30px;
+    margin: auto;
+    margin-top:10px;
+}
+
+.register-form-buttons,.login-form-buttons{
+    margin-top:10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.register-form-button,.login-form-button{
+    background-color: rgb(98, 98, 102);
+    color: white;
+    padding: 3px 8px 3px 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    border:rgb(98, 98, 102);
+}
+
+.register-form-button:hover,.login-form-button:hover{
+    background-color: rgb(57, 57, 61);
+}
+
+.register-form-div,.login-form-div{
+    position:relative;
+    text-align:center;
+    
+}
+
+.fa-exclamation{
+    position:absolute;
+    top:28.5%;
+    right:38%;
+    color:rgb(209, 31, 31)
+}
+
+.fa-exclamation-select{
+    right:38.7%;
+}
+
+.form-error{
+    color:rgb(209, 31, 31)
+}
+
+.is-invalid{
+    border:rgb(170, 6, 6) solid 2px
+}
+
+.login-text{
+    margin-top:8px
+}
+
+@media (min-width:478px){
+    .register-form-input,.login-form-input{
+        width: 400px;
+    }
+}
