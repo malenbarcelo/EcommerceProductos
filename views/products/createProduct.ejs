@@ -2,44 +2,83 @@
 <%- include('../partials/header') %>
 
 <!-- Formulario de creación de producto-->
-<h3 class="form-title">Datos del producto a crear</h3>
+<h3 class="create-product-form-title">Datos del producto a crear</h3>
 
 
-<form action="/products"  enctype="multipart/form-data" method="POST" id="form-create">
-        <div class="div-name">
-            <input type="text" id="id" name="id" placeholder="Código del producto" class="form-input">
+<form action="/products"  enctype="multipart/form-data" method="POST">
+        <div class="create-product-form-div">
+            <input type="text" class="create-product-form-input <%= locals.errors && errors.item ? 'is-invalid' : null %>" name="item" placeholder="Código del producto" value="<%= locals.oldData ? oldData.item : null %>">
+            <% if (locals.errors && errors.item) { %>
+                <i class="fas fa-exclamation"></i>
+                <div class="form-error">
+                    <%= errors.item.msg %> 
+                </div>
+            <% } %>
         </div>
-        <div class="div-description">
-            <input type="text" id="description" name="description" placeholder="Descripción" class="form-input">
+        <div class="create-product-form-div">
+            <input type="text" class="create-product-form-input <%= locals.errors && errors.description ? 'is-invalid' : null %>" name="description" placeholder="Descripción" value="<%= locals.oldData ? oldData.description : null %>">
+            <% if (locals.errors && errors.description) { %>
+                <i class="fas fa-exclamation"></i>
+                <div class="form-error">
+                    <%= errors.description.msg %> 
+                </div>
+            <% } %>
         </div>
-        <div>
-            <select name="category" id="category">
+        <div class="create-product-form-div">
+            <select name="category"  class="create-product-form-input <%= locals.errors && errors.category ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.category : null %>">
                 <option value="default" selected>Seleccione una categoría</option>
-                <option value="chops">Chops</option>
-                <option value="copas">Copas</option>
-                <option value="jarras">Jarras</option>
-                <option value="tazas">Tazas</option>
-                <option value="vajilla">Vajilla</option>
-                <option value="vasos">Vasos</option>
+                <option value="chops" <%= locals.oldData && oldData.category == 'chops' ? 'selected' : null %>>Chops</option>
+                <option value="copas" <%= locals.oldData && oldData.category == 'copas' ? 'selected' : null %>>Copas</option>
+                <option value="jarras" <%= locals.oldData && oldData.category == 'jarras' ? 'selected' : null %>>Jarras</option>
+                <option value="tazas" <%= locals.oldData && oldData.category == 'tazas' ? 'selected' : null %>>Tazas</option>
+                <option value="vajilla" <%= locals.oldData && oldData.category == 'vajilla' ? 'selected' : null %>>Vajilla</option>
+                <option value="vasos" <%= locals.oldData && oldData.category == 'vasos' ? 'selected' : null %>>Vasos</option>
             </select>
+            <% if (locals.errors && errors.category) { %>
+                <i class="fas fa-exclamation fa-exclamation-select"></i>
+                <div class="form-error">
+                    <%= errors.category.msg %> 
+                </div>
+            <% } %>
         </div>
-        <div class="div-price">
-            <input type="number" id="price" name="price" placeholder="Precio (AR$)" class="form-input">
+        <div class="create-product-form-div">
+            <input type="text" class="create-product-form-input <%= locals.errors && errors.price ? 'is-invalid' : null %>" name="price" placeholder="Precio (AR$)" value="<%= locals.oldData ? oldData.price : null %>">
+            <% if (locals.errors && errors.price) { %>
+                <i class="fas fa-exclamation"></i>
+                <div class="form-error">
+                    <%= errors.price.msg %> 
+                </div>
+            <% } %>
         </div>
-        <div class="div-discount">
-            <input type="number" id="discount" name="discount" placeholder="Descuento (%)" class="form-input">
+        <div class="create-product-form-div">
+            <input type="text" class="create-product-form-input <%= locals.errors && errors.discount ? 'is-invalid' : null %>" name="discount" placeholder="Descuento (%)" value="<%= locals.oldData ? oldData.discount : null %>">
+            <% if (locals.errors && errors.discount) { %>
+                <i class="fas fa-exclamation"></i>
+                <div class="form-error">
+                    <%= errors.discount.msg %> 
+                </div>
+            <% } %>
         </div>
-
-        <div class="div-stock-form">
-            <input type="number" id="stock" name="stock" placeholder="Stock (unidades)" class="form-input">
+        <div class="create-product-form-div">
+            <input type="text" class="create-product-form-input <%= locals.errors && errors.stock ? 'is-invalid' : null %>" name="stock" placeholder="Stock (unidades)" value="<%= locals.oldData ? oldData.stock : null %>">
+            <% if (locals.errors && errors.stock) { %>
+                <i class="fas fa-exclamation"></i>
+                <div class="form-error">
+                    <%= errors.stock.msg %> 
+                </div>
+            <% } %>
         </div>
-
-        <div class="div-image">
-            <input type="file" id="image" name="image" class="form-input">
+        <div class="create-product-form-div">
+            <input type="file" class="create-product-form-input <%= locals.errors && errors.image ? 'is-invalid' : null %>" name="image" value="<%= locals.oldData ? oldData.image : null %>">
+            <% if (locals.errors && errors.image) { %>
+                <i class="fas fa-exclamation"></i>
+                <div class="form-error">
+                    <%= errors.image.msg %> 
+                </div>
+            <% } %>
         </div>
-        <div class="div-buttons">
-            <button type="reset" class="create-form-button">Borrar datos</button>
-            <button type="submit" class="create-form-button">Guardar producto</button>
+        <div class="create-product-form-buttons">
+            <button type="submit" class="create-product-form-button">Guardar producto</button>
         </div>
 </form>
 

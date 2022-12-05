@@ -6,7 +6,7 @@
 <div class="grid-products">
     <% products.forEach(product => { %>
         <div class="product">
-            <a href="/products/product-detail/<%= product.id %> " class="product-detail-link">
+            <a href="/products/product-detail/<%= product.item %> " class="product-detail-link">
                 <div class="div-description">
                     <p class="description"><%= product.description %></p>
                 </div>
@@ -27,15 +27,15 @@
                 <% } %>
             </div>
             <div class="div-add-to-cart">
-                <a href="/products/product-detail/<%= product.id %> " class="add-to-cart">Agregar al carrito</a>
+                <a href="/products/product-detail/<%= product.item %> " class="add-to-cart">Agregar al carrito</a>
             </div>
             
             <div class="div-flex-edit-delete">
                 <div class="div-edit-product">
-                    <a href="/products/edit-product/<%= product.id %> " class="btn-edit">Editar</a>
+                    <a href="/products/edit-product/<%= product.item %> " class="btn-edit">Editar</a>
                 </div>
                 <div class="div-delete-product">
-                    <a href="/products/delete-product/<%= product.id %> " class="btn-delete">Eliminar</a>
+                    <a href="/products/delete-product/<%= product.item %> " class="btn-delete">Eliminar</a>
                 </div>
             </div>
             

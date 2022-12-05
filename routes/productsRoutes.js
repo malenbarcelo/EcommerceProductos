@@ -3,6 +3,7 @@ const productsController = require('../controllers/productsController.js')
 const router = express.Router()
 const multer = require('multer')
 const path = require('path')
+const productFormsValidations = require('../validations/productFormsValidations.js')
 
 //Configuro Multer
 const storage = multer.diskStorage({
@@ -21,13 +22,13 @@ const storage = multer.diskStorage({
 
 router.get('/',productsController.allProducts)
 router.get('/products-filtered/:productCategory',productsController.filteredProducts)
-router.get('/product-detail/:productId',productsController.productDetail)
+router.get('/product-detail/:productItem',productsController.productDetail)
 router.get('/product-cart',productsController.cart)
 router.get('/create-product',productsController.create)
-router.post('/', upload.single('image'),productsController.store)
-router.get('/edit-product/:productId',productsController.edit)
-router.put('/',upload.single('image'),productsController.update)
-router.get('/delete-product/:productId',productsController.delete)
+router.post('/', upload.single('image'),productFormsValidations.productFormValidations,productsController.store)
+router.get('/edit-product/:productItem',productsController.edit)
+router.put('/',upload.single('image'),productFormsValidations.productFormValidations,productsController.update)
+router.get('/delete-product/:productItem',productsController.delete)
 router.delete('/',upload.single('image'),productsController.destroy)
 
 module.exports = router
