@@ -1,17 +1,22 @@
-const express=require('express')
+const express = require('express')
 const path = require('path')
 const app = express()
-const mainRoutes = require('./routes/mainRoutes.js')
-const productsRoutes = require('./routes/productsRoutes.js')
-const usersRoutes = require('./routes/usersRoutes.js')
+const mainRoutes = require('./src/routes/mainRoutes.js')
+const productsRoutes = require('./src/routes/productsRoutes.js')
+const usersRoutes = require('./src/routes/usersRoutes.js')
 const publicPath =  path.resolve('./public')
+const srcPath = path.resolve('./src')
+const session = require('express-session') 
+
 const APP_PORT = 3000
 const methodOverride = require('method-override')
-
 
 app.use(express.static(publicPath)) //le decimos que queremos la carpeta como un recurso de archivos estáticos
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+app.use(session({secret:'secret'}))
+
+app.set('views', path.join(__dirname, 'src/views')); //este paso es porque la carpeta views no está en la carpeta raiz
 app.set('view engine','ejs')
 app.use(methodOverride('_method'))
 

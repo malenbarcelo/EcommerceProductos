@@ -1,10 +1,10 @@
-.register-form-title,.login-form-title,.create-product-form-title,.edit-product-form-title{
+.register-form-title,.login-form-title,.create-product-form-title,.edit-product-form-title,.delete-form-title{
     text-align: center;
     margin-top:20px;
     padding: 0px;
 }
 
-.register-form-input,.login-form-input,.create-product-form-input,.edit-product-form-input{
+.register-form-input,.login-form-input,.create-product-form-input,.edit-product-form-input,.delete-product-form-input{
     border: 1px rgb(165, 164, 164) solid;
     border-radius:5px;
     width: 60vw;
@@ -13,13 +13,13 @@
     margin-top:10px;
 }
 
-.register-form-buttons,.login-form-buttons,.create-product-form-buttons,.edit-product-form-buttons{
+.register-form-buttons,.login-form-buttons,.create-product-form-buttons,.edit-product-form-buttons,.delete-product-form-buttons{
     margin-top:10px;
     margin-bottom: 10px;
     text-align: center;
 }
 
-.register-form-button,.login-form-button,.create-product-form-button,.edit-product-form-button{
+.register-form-button,.login-form-button,.create-product-form-button,.edit-product-form-button,.delete-product-form-button{
     background-color: rgb(98, 98, 102);
     color: white;
     padding: 3px 8px 3px 8px;
@@ -28,11 +28,11 @@
     border:rgb(98, 98, 102);
 }
 
-.register-form-button:hover,.login-form-button:hover,.create-product-form-button:hover,.edit-product-form-button:hover{
+.register-form-button:hover,.login-form-button:hover,.create-product-form-button:hover,.edit-product-form-button:hover.delete-product-form-button:hover{
     background-color: rgb(57, 57, 61);
 }
 
-.register-form-div,.login-form-div,.create-product-form-div,.edit-product-form-div{
+.register-form-div,.login-form-div,.create-product-form-div,.edit-product-form-div,.delete-product-form-div{
     position:relative;
     text-align:center;
 }
@@ -61,13 +61,13 @@
 }
 
 
-.edit-product-form-image{
+.edit-product-form-image,.delete-product-form-image{
     margin-top:10px;
     width:100px;
 }
 
 @media (min-width:478px){
-    .register-form-input,.login-form-input,.create-product-form-input,.edit-product-form-input{
+    .register-form-input,.login-form-input,.create-product-form-input,.edit-product-form-input,.delete-product-form-input{
         width: 400px;
     }
 }

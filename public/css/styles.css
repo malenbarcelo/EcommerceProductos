@@ -347,7 +347,7 @@ p{
     .main-header-bottom{
         display:block;
         padding-bottom:0px;
-        padding-bottom:0px
+        padding-bottom:0px;
     }
 
     .menu{
@@ -357,7 +357,24 @@ p{
         list-style: none;
         padding:0px;
         margin-bottom:5px;
-        margin-top:5px;
+        margin-top:5px;        
+    }
+
+    .menu-users{
+        position:relative;
+        transition:all 0.5s        
+    }
+
+    .submenu-users{
+        list-style: none;
+        margin:auto;
+        padding:0px;
+        display:none;
+        position: absolute;
+        transition:all 0.5s;
+        background-color: rgb(247, 231, 234);
+        padding-bottom:5px;
+        z-index: 1;       
         
     }
 
@@ -375,7 +392,7 @@ p{
         transition:all 0.5s;
         background-color: rgb(247, 231, 234);
         padding-bottom:5px;
-        z-index: 1;       
+        z-index: 1;
         
     }
 
@@ -383,27 +400,29 @@ p{
         width:100px;
         text-align: center;
         background-color: rgb(247, 231, 234);
-        margin-top:3px
-        
+        margin-top:3px;
+    }
+
+    
+
+    .menu-users:hover > .submenu-users{
+        display:block
     }
 
     .menu-products:hover > .submenu-products{
         display:block
     }
 
-    .menu a{
+    .menu a, .submenu a{
         text-decoration: none;
         color:black;
         padding:3px 5px 3px 5px;
         color:#2a0808;
         margin-bottom:0px;
-        font-size: 15px;
-    }
-
-    
+    }    
 
 
-    .menu a:hover{
+    .menu a:hover, .submenu a:hover{
         box-shadow: 0px 0px 6px rgb(119, 97, 141);
         color:rgb(207, 136, 136);
         transition: all 100ms;
@@ -415,6 +434,16 @@ p{
         width: 125px;
 
     }
+
+    .user-image{
+        height: 40px;
+    }
+
+    .fa-chevron-down{
+        font-size: 13px;
+    }
+
+    
 
 }
 
@@ -439,8 +468,10 @@ p{
     }
 
     .menu a{
-
         font-size: 18px;
+    }
+    .submenu a{
+        font-size: 13px;
     }
 
     footer{
