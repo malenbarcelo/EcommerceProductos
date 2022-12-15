@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<h2 class="products-title">Bienvenido, <%= userLogged.company %> </h2>
+
+<div class="profile-div">
+    <img src="../images/usersImages/<%= userLogged.image %>" class="img-user-logged" alt="<%= userLogged.image %>">
+    <div class="company-data">
+        <p><b>Company: </b><%= userLogged.company %></p>
+        <p><b>Email: </b><%= userLogged.email %></p>
+        <p><b>Rubro: </b><%= userLogged.sector %></p>
+        <p><b>Domicilio: </b><%= userLogged.address %></p>
+        <p><b>Ciudad: </b><%= userLogged.city %></p>
+        <p><b>Teléfono: </b><%= userLogged.phoneNumber %></p>
+        
+    </div>    
+</div>
+
+<%- include('../partials/linkWhatsApp') %>
+<%- include('../partials/footer') %>

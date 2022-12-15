@@ -7,14 +7,14 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     allProducts: (req,res) => {
-        res.render('products/products',{title:'Productos',products:products,userLogged:req.session.userLogged})
+        res.render('products/products',{title:'Productos',products:products})
     },
     filteredProducts: (req,res) => {
         let categoryRouteFiltered = './'
         let productCategory = req.params.productCategory
         let categoryTitle = productCategory.charAt(0).toUpperCase() + productCategory.slice(1)
         let productsFiltered = products.filter(product => product.category == productCategory)
-        return res.render('products/productsFiltered',{title:productCategory,products:productsFiltered,categoryTitle: categoryTitle,userLogged:req.session.userLogged})
+        return res.render('products/productsFiltered',{title:productCategory,products:productsFiltered,categoryTitle: categoryTitle})
     },
     productDetail: (req,res) => {
         let productItem = req.params.productItem
@@ -23,13 +23,13 @@ const productsController = {
             return res.send('El producto no existe')
         }
         console.log(selectedProduct)
-        return res.render('products/productDetail',{title:'Detalle del producto',selectedProduct,userLogged:req.session.userLogged})
+        return res.render('products/productDetail',{title:'Detalle del producto',selectedProduct})
     },
     cart: (req,res) => {
-        res.render('products/productCart',{title:'Tu carrito de compras',userLogged:req.session.userLogged})
+        res.render('products/productCart',{title:'Tu carrito de compras'})
     },
     create: (req,res) => {
-        res.render('products/createProduct.ejs',{title:'Crear producto',userLogged:req.session.userLogged})
+        res.render('products/createProduct.ejs',{title:'Crear producto'})
     },
     store: (req, res) => {
         const resultValidation = validationResult(req)
@@ -38,9 +38,7 @@ const productsController = {
             return res.render('products/createProduct',{
                 errors:resultValidation.mapped(),
                 oldData: oldData,
-                title:'Crear producto',
-                userLogged:req.session.userLogged
-            })
+                title:'Crear producto'})
         } else{
             const camposNuevoProducto = req.body
             camposNuevoProducto.image = req.file.filename
@@ -56,11 +54,13 @@ const productsController = {
         if(productToEdit == undefined){
             return res.send('El producto no existe')
         }
-        return res.render('products/editProduct',{title:'Editar producto',product:productToEdit,userLogged:req.session.userLogged})
+        console.log(req.session.userLogged)
+        return res.render('products/editProduct',{
+            title:'Editar producto',
+            product:productToEdit})
     },
-    update: (req, res) => {        
+    update: (req, res) => {
         const resultValidation = validationResult(req)
-        console.log(resultValidation.errors.length)
         if ((resultValidation.errors.length > 1) || (resultValidation.errors.length == 1 && resultValidation.errors[0].param != 'image')){
             const productToEdit = products.find(product => product.item == req.body.item)
             const oldData = req.body
@@ -69,11 +69,10 @@ const productsController = {
                 errors:resultValidation.mapped(),
                 oldData: oldData,
                 title:'Editar producto',
-                userLogged:req.session.userLogged
             })
         } else{
             let productEdited = req.body
-            productEdited.discount = req.body.discount /100
+            productEdited.discount = req.body.discount
             let productItem = req.body.item
             let productToEdit =products.find(product => product.item == productItem)
             let index = products.indexOf(productToEdit);
@@ -82,10 +81,10 @@ const productsController = {
             }else{
                 productEdited.image=req.file.filename
             }
-
             products[index]=productEdited
             fs.writeFileSync(productsFilePath,JSON.stringify(products))
             return res.redirect('/products')
+
         }
     },
     delete: (req,res) => {
@@ -94,7 +93,7 @@ const productsController = {
         if(productToDelete == undefined){
             return res.send('El producto no existe')
         }
-        return res.render('products/deleteProduct',{title:'Borrar producto',product:productToDelete,userLogged:req.session.userLogged})
+        return res.render('products/deleteProduct',{title:'Borrar producto',product:productToDelete})
     },
     destroy : (req, res) => {
         const item = req.body.item;

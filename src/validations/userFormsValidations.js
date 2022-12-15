@@ -52,6 +52,13 @@ const userFormsValidations = {
             .notEmpty().withMessage('Ingrese una contraseña')
             .custom((value,{ req }) => {
                 userToLogin = users.find(user => user.email == req.body.email)
+                if (!userToLogin) {
+                    throw new Error(' ')
+                }
+                return true
+            })
+            .custom((value,{ req }) => {
+                userToLogin = users.find(user => user.email == req.body.email)
                 if (!bcrypt.compareSync(req.body.password, userToLogin.password)) {
                     throw new Error('Contraseña inválida')
                 }

@@ -22,15 +22,15 @@
         <div class="user-login">
 
             <!---<i class="fa-regular fa-user"></i>--->
-            <% if (!userLogged) { %>
+            <% if (!locals.isLogged) { %>
                 <img src="/images/usersImages/default.jpg" alt="user-image" class="user-image">
                 <b>Bienvenido</b>
             <% } %>
-            <% if (userLogged) { %>
-                <img src="/images/usersImages/<%= userLogged.image %> " alt="user-image" class="user-image">
+            <% if (locals.isLogged) { %>
+                <img src="/images/usersImages/<%= locals.userLogged.image %> " alt="user-image" class="user-image">
             <% } %>
-            <% if (userLogged) { %>
-                <b><%= userLogged.company %></b>
+            <% if (locals.userLogged) { %>
+                <b><%= locals.userLogged.company %></b>
             <% } %>
             
         </div>
@@ -44,20 +44,29 @@
             <li><a href="/">Inicio</a></li>
             <li class="menu-products"><a href="/products">Productos<i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="submenu-products">
-                    <li class="submenu"><a href="/products/products-filtered/copas" class="item-submenu">Copas</a></li>
+                    <li class="submenu"><a href="/products/products-filtered/copas">Copas</a></li>
                     <li class="submenu"><a href="/products/products-filtered/tazas">Tazas</a></li>
                     <li class="submenu"><a href="/products/products-filtered/vasos">Vasos</a></li>
                     <li class="submenu"><a href="/products/products-filtered/vajilla">Vajilla</a></li>
                 </ul>
             </li>
-            <li class="menu-users"><a href="/products">Usuarios<i class="fa-solid fa-chevron-down"></i></a>
+            <li class="menu-users"><a href="">Usuarios<i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="submenu-users">
-                    <li class="submenu"><a href="/users/register">Registrarse</a></li>
-                    <li class="submenu"><a href="/users/login">Iniciar sesión</a></li>
-                    <li class="submenu"><a href="/users/logout">Cerrar sesión</a></li>
+                    <% if (!locals.isLogged) { %>
+                        <li class="submenu"><a href="/users/register">Registrarse</a></li>
+                        <li class="submenu"><a href="/users/login">Iniciar sesión</a></li>                        
+                    <% } %>
+                    
+                    <% if (locals.isLogged) { %>
+                        <li class="submenu"><a href="/users/logout">Cerrar sesión</a></li>
+                        <li class="submenu"><a href="/users/profile">Mi perfil</a></li>                     
+                    <% } %>
                 </ul>
             </li>
-            <li><a href="/products/create-product">Crear Producto</a></li>
+            <% if (locals.userLogged && locals.userLogged.category == 'administrador') { %>
+                <li><a href="/products/create-product">Crear Producto</a></li>                     
+            <% } %>
+            
         </ul>
     </nav>
 

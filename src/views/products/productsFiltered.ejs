@@ -31,12 +31,14 @@
             </div>
             
             <div class="div-flex-edit-delete">
-                <div class="div-edit-product">
-                    <a href="/products/edit-product/<%= product.item %> " class="btn-edit">Editar</a>
-                </div>
-                <div class="div-delete-product">
-                    <a href="/products/delete-product/<%= product.item %> " class="btn-delete">Eliminar</a>
-                </div>
+                <% if (locals.userLogged && loclas.userLogged.category == 'administrador') { %>
+                    <div class="div-edit-product">
+                        <a href="/products/edit-product/<%= product.item %> " class="btn-edit">Editar</a>
+                    </div>
+                    <div class="div-delete-product">
+                        <a href="/products/delete-product/<%= product.item %> " class="btn-delete">Eliminar</a>
+                    </div>
+                <% } %>
             </div>
             
         </div>

@@ -4,6 +4,8 @@ const router = express.Router()
 const userFormsValidations = require('../validations/userFormsValidations.js')
 const multer = require('multer')
 const path = require('path')
+const guestMiddleware = require('../middlewares/guestMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware')
 
 //Configuro Multer
 const storage = multer.diskStorage({
@@ -20,11 +22,12 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 
-router.get('/register',usersController.register)
+router.get('/register',guestMiddleware,usersController.register)
 router.post('/register',upload.single('image'),userFormsValidations.registerFormValidations,usersController.processRegister)
-router.get('/login',usersController.login)
+router.get('/login',guestMiddleware,usersController.login)
 router.post('/login',userFormsValidations.loginFormValidations,usersController.processLogin)
 router.get('/forgotPassword',usersController.forgotPassword)
-router.get('/logout',usersController.logout)
+router.get('/logout',authMiddleware,usersController.logout)
+router.get('/profile',authMiddleware,usersController.viewProfile)
 
 module.exports = router
