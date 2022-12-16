@@ -66,6 +66,10 @@
     width:100px;
 }
 
+.div-remember-user{
+    margin-top:10px
+}
+
 @media (min-width:478px){
     .register-form-input,.login-form-input,.create-product-form-input,.edit-product-form-input,.delete-product-form-input{
         width: 400px;

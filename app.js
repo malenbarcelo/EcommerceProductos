@@ -8,6 +8,7 @@ const publicPath =  path.resolve('./public')
 const srcPath = path.resolve('./src')
 const session = require('express-session') 
 const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware')
+const cookies = require('cookie-parser')
 
 const APP_PORT = 3000
 const methodOverride = require('method-override')
@@ -20,6 +21,8 @@ app.use(session({
     resave:false,
     saveUninitialized:false
 }))
+
+app.use(cookies())
 app.use(userLoggedMiddleware)
 
 app.set('views', path.join(__dirname, 'src/views')); //este paso es porque la carpeta views no está en la carpeta raiz

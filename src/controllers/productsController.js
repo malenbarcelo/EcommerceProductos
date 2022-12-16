@@ -42,7 +42,7 @@ const productsController = {
         } else{
             const camposNuevoProducto = req.body
             camposNuevoProducto.image = req.file.filename
-            camposNuevoProducto.discount = req.body.discount/100
+            camposNuevoProducto.discount = req.body.discount
             products.push(camposNuevoProducto)
             fs.writeFileSync(productsFilePath,JSON.stringify(products))
             return res.redirect('/products')
@@ -50,11 +50,11 @@ const productsController = {
     },
     edit: (req,res) => {
         const productItem = req.params.productItem
-        const productToEdit = products.find(product => product.item == productItem)
+        var productToEdit = products.find(product => product.item == productItem)
+        productToEdit.password = productToEdit.password / 100
         if(productToEdit == undefined){
             return res.send('El producto no existe')
         }
-        console.log(req.session.userLogged)
         return res.render('products/editProduct',{
             title:'Editar producto',
             product:productToEdit})

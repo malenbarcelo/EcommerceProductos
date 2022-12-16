@@ -11,7 +11,7 @@ let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const usersController = {
 
     register: (req,res) => {
-        res.render('users/register',{title:'Registro'})
+        return res.render('users/register',{title:'Registro'})
     },
     processRegister: (req,res)=>{
         const resultValidation = validationResult(req)
@@ -36,7 +36,7 @@ const usersController = {
         return res.redirect('/users/login')
     },
     login: (req,res) => {
-        res.render('users/login',{title:'Login'})
+        return res.render('users/login',{title:'Login'})
     },
     processLogin: (req, res) => {
         const resultValidation = validationResult(req)
@@ -45,16 +45,18 @@ const usersController = {
                 errors:resultValidation.mapped(),
                 oldData: req.body,
                 title:'Registro'
-                
             })
         }
         const userToLogin = users.find(user => user.email == req.body.email)
         req.session.userLogged = userToLogin
         delete req.session.userLogged.password
+        if(req.body.remember_user){
+            res.cookie('userEmail',req.body.email,{maxAge:(1000 * 60) * 5})
+        }
         return res.redirect('/users/profile')
-
     },
     logout: (req,res) => {
+       res.clearCookie('userEmail') 
        req.session.destroy()
        return res.redirect('/')
     },
@@ -62,7 +64,7 @@ const usersController = {
         res.render('users/forgotPassword',{title:'Login'})
     },
     viewProfile: (req,res) => {
-        res.render('users/profile',{
+        return res.render('users/profile',{
             title:'Perfil',
             userLogged: req.session.userLogged
         })
