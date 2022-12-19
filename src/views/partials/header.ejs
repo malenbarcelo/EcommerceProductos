@@ -24,13 +24,13 @@
             <!---<i class="fa-regular fa-user"></i>--->
             <% if (!locals.isLogged) { %>
                 <img src="/images/usersImages/default.jpg" alt="user-image" class="user-image">
-                <b>Bienvenido</b>
+                <b class="user-logged">Bienvenido</b>
             <% } %>
             <% if (locals.isLogged) { %>
                 <img src="/images/usersImages/<%= locals.userLogged.image %> " alt="user-image" class="user-image">
             <% } %>
             <% if (locals.userLogged) { %>
-                <b><%= locals.userLogged.company %></b>
+                <b class="user-logged"><%= locals.userLogged.company %></b>
             <% } %>
             
         </div>
@@ -71,4 +71,3 @@
     </nav>
 
 </header>
-

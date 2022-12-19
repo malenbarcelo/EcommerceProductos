@@ -56,8 +56,17 @@ header{
     transition: all 450ms;
 }
 
-
-
+.user-image{
+    display:none
+}
+.product-cart{
+    margin-right:20px;
+    margin-left:10px
+}
+.user-logged{
+    font-size:12px;
+    margin-left:10px
+}
 
 /*CARROUSEL-------------------------------*/
 .carrousel{
@@ -306,6 +315,8 @@ p{
     height: 600px;
 }
 
+
+
 @media (min-width:478px){
 
     .burger-menu, .magnifying-glass{
@@ -443,6 +454,19 @@ p{
         font-size: 13px;
     }
 
+    .user-image{
+        display:inline
+    }
+    
+    .user-logged{
+        font-size:15px;
+        
+    }
+
+    .user-login{
+        width: 200px;
+        
+    }
     
 
 }

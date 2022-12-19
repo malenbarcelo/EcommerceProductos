@@ -1,13 +1,21 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<img src="/images/productos/<%= selectedProduct.image %>" class="img-product-detail" alt="Producto 1">
-    <div class="informacion">
-            <p>Producto <%= selectedProduct.item %>  </p>
-            <p class="Precio">$ <%= selectedProduct.price %></p>
-            <p>Detalle Del Producto</p>
-            <button class="btn-agregar"> Agregar al carrito </button> 
-        </div>
+<div class="product-div">
+    <div class="product-title-div">
+        <h5 class="product-title"><%= selectedProduct.description %></h5>
+    </div>
+    
+
+    <img src="/images/productos/<%= selectedProduct.image %>" class="img-product-detail" alt="Producto 1">
+    <div class="product-data">
+        <p>Producto <%= selectedProduct.item %>  </p>
+        <p class="Precio">$ <%= selectedProduct.price %></p>
+        <button class="btn-agregar"> Agregar al carrito </button> 
+    </div>
+
+</div>
+
         
 
 <%- include('../partials/linkWhatsApp') %>
