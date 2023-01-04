@@ -1,0 +1,19 @@
+Usuarios
+
+Clientes
+Usuario: company1@gmail.com
+Password: pswcompany1
+Usuario: company2@gmail.com
+Password: pswcompany2
+Usuario: company3@gmail.com
+Password: pswcompany3
+
+Administradores
+Usuario: adm1@gmail.com
+Password: pswadm1
+Usuario: adm2@gmail.com
+Password: pswadm2
+Usuario: adm3@gmail.com
+Password: pswadm3
+Usuario: adm4@gmail.com
+Password: pswadm4 

@@ -20,7 +20,6 @@ function userLoggedMiddleware(req,res,next){
         res.locals.userLogged=req.session.userLogged
     }
 
-
-    next()
+    return next()
 }
 module.exports=userLoggedMiddleware
