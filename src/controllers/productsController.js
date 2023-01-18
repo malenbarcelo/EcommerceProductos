@@ -19,7 +19,7 @@ const productsController = {
             })
             const allProducts = await db.Products.findAll()
             return res.render('products/products',{title:'Productos',products,allProducts})
-            
+
         }catch(error){
             return res.send('Ups, algo salió mal')
         }
@@ -59,7 +59,7 @@ const productsController = {
         }catch(error){
             console-log('errorrrr')
             return res.send('Ups, algo salió mal')
-        }        
+        }
     },
     store: async (req, res) => {
         const resultValidation = validationResult(req)
@@ -169,13 +169,12 @@ const productsController = {
         }
     },
     destroy : async(req, res) => {
+        const item = req.body.item;
         try{
-            const item = req.body.item;
-            await db.Products.destroy({where:{product_name:item}})
+            await db.Products.destroy({where: {product_name:item}})
             return res.redirect('/products/page1')
-
         }catch(error){
-            return res.send('Ups, algo salió mal')
+            return res.send('El producto no se puede eliminar porque tiene asociaciones en el carro de compras')
         }
     }
 }

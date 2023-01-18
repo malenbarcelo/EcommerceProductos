@@ -56,6 +56,7 @@ const usersController = {
         try{
             const resultValidation = validationResult(req)
         if (resultValidation.errors.length > 0){
+            console.log(resultValidation)
             return res.render('users/login',{
                 errors:resultValidation.mapped(),
                 oldData: req.body,

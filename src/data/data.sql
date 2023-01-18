@@ -113,7 +113,7 @@ INSERT INTO sio2.products (product_name,product_description,product_category_id,
 INSERT INTO sio2.products (product_name,product_description,product_category_id,price,discount,stock,product_image) VALUES('278300001','Acapulco - Café expresso 80 ml.',6,674.8,0,250,'278300001.jpg');
 
 /*Insertar datos carro de compras*/
-INSERT INTO sio2.cart_details (sale_id,product_id,user_id,product_qty,product_price) VALUES(1,1,1,1,1330);
+INSERT INTO sio2.cart_details (sale_id,product_id,user_id,product_qty,product_price) VALUES(1,11,1,1,1330);
 INSERT INTO sio2.cart_details (sale_id,product_id,user_id,product_qty,product_price) VALUES(1,2,1,2,1444.80);
 INSERT INTO sio2.cart_details (sale_id,product_id,user_id,product_qty,product_price) VALUES(1,3,1,3,1514.80);
 INSERT INTO sio2.cart_details (sale_id,product_id,user_id,product_qty,product_price) VALUES(1,4,1,4,1167.60);
