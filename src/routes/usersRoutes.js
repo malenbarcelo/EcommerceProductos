@@ -29,5 +29,6 @@ router.post('/login',userFormsValidations.loginFormValidations,usersController.p
 router.get('/forgotPassword',usersController.forgotPassword)
 router.get('/logout',authMiddleware,usersController.logout)
 router.get('/profile',authMiddleware,usersController.viewProfile)
+router.get('/edit-profile',usersController.editProfile)
 
 module.exports = router

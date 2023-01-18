@@ -6,7 +6,9 @@
 
 <form action="/users/register" method="POST" name="form-register" enctype="multipart/form-data">
     <div class="register-form-div">
+        
         <input type="text" name="company" placeholder="Razón Social" class="register-form-input <%= locals.errors && errors.company ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.company : null %>">
+
         <% if (locals.errors && errors.company) { %>
             <i class="fas fa-exclamation"></i>
             <div class="form-error">

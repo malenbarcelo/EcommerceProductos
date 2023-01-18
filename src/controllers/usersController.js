@@ -4,6 +4,7 @@ const path = require('path');
 const bcrypt = require('bcryptjs')
 const usersFilePath = path.resolve('./src/data/usersJSON.json');
 const {validationResult} = require('express-validator')
+const db = require('../../database/models');
 
 
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -13,33 +14,47 @@ const usersController = {
     register: (req,res) => {
         return res.render('users/register',{title:'Registro'})
     },
-    processRegister: (req,res)=>{
+    processRegister: async (req,res)=>{
         const resultValidation = validationResult(req)
-        if (resultValidation.errors.length > 0){
-            return res.render('users/register',{
-                errors:resultValidation.mapped(),
-                oldData: req.body,
-                title:'Registro'
-                })
+        try{
+            if (resultValidation.errors.length > 0){
+                return res.render('users/register',{
+                    errors:resultValidation.mapped(),
+                    oldData: req.body,
+                    title:'Registro'
+                    })
+            }
+            const newUser = req.body
+            newUser.password = bcrypt.hashSync(req.body.password,10)
+            if(!req.file){
+                newUser.image = 'default.jpg'
+            }else{
+                newUser.image = req.file.filename
+            }
+            const user_sector = await db.User_sectors.findOne({where:{user_sector_name:req.body.sector}})
+            await db.Users.create({
+                user_name: req.body.company,
+                cuit_cuil: req.body.cuit,
+                user_sector_id: user_sector.dataValues.user_sector_id,
+                user_category_id: 2,
+                email: req.body.email,
+                address: req.body.address,
+                city: req.body.city,
+                phone_number: req.body.phoneNumber,
+                user_image: newUser.image,
+                password: newUser.password
+            })
+            return res.redirect('/users/profile')
+        }catch(error){
+            return res.send('Ups, algo salió mal')
         }
-        const newUser = req.body
-        delete newUser.passwordConfirmation
-        newUser.password = bcrypt.hashSync(req.body.password,10)
-        newUser.category = 'cliente'
-        if(!req.file){
-            newUser.image = 'default.jpg'
-        }else{
-            newUser.image = req.file.filename
-        }
-        users.push(newUser)
-        fs.writeFileSync(usersFilePath,JSON.stringify(users))
-        return res.redirect('/users/login')
     },
     login: (req,res) => {
         return res.render('users/login',{title:'Login'})
     },
-    processLogin: (req, res) => {
-        const resultValidation = validationResult(req)
+    processLogin: async(req, res) => {
+        try{
+            const resultValidation = validationResult(req)
         if (resultValidation.errors.length > 0){
             return res.render('users/login',{
                 errors:resultValidation.mapped(),
@@ -47,13 +62,20 @@ const usersController = {
                 title:'Registro'
             })
         }
-        const userToLogin = users.find(user => user.email == req.body.email)
+        const userToLogin = await db.Users.findOne({where:{email:req.body.email}})
+        const user_sector = await db.User_sectors.findOne(
+            {where:{user_sector_id:userToLogin.user_sector_id}}
+            )
+        userToLogin.dataValues.sector_name = user_sector.dataValues.user_sector_name
         req.session.userLogged = userToLogin
         delete req.session.userLogged.password
         if(req.body.remember_user){
             res.cookie('userEmail',req.body.email,{maxAge:(1000 * 60) * 5})
         }
         return res.redirect('/users/profile')
+        }catch(error){
+            res.send('Ups, algo salió mal')
+        }
     },
     logout: (req,res) => {
        res.clearCookie('userEmail') 
@@ -68,6 +90,10 @@ const usersController = {
             title:'Perfil',
             userLogged: req.session.userLogged
         })
+        console.log(userLogged)
+    },
+    editProfile: (req,res) =>{
+        return res.send('Estamos trabajando en la edición del perfil')
     }
 
 }

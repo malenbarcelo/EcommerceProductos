@@ -23,11 +23,12 @@ const storage = multer.diskStorage({
 
   const upload = multer({storage})  
 
-router.get('/',productsController.allProducts)
+//router.get('/',productsController.allProducts)
+router.get('/create-product',admMiddleware,productsController.create)
+router.get('/:page',productsController.allProducts)
 router.get('/products-filtered/:productCategory',productsController.filteredProducts)
 router.get('/product-detail/:productItem',productsController.productDetail)
 router.get('/product-cart',authMiddleware,productsController.cart)
-router.get('/create-product',admMiddleware,productsController.create)
 router.post('/', upload.single('image'),productFormsValidations.productFormValidations,productsController.store)
 router.get('/edit-product/:productItem',admMiddleware,productsController.edit)
 router.put('/',upload.single('image'),productFormsValidations.productFormValidations,productsController.update)

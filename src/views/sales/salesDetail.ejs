@@ -1,0 +1,29 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<h2 class="cart-detail-title">Detalle de ventas </h2>
+
+<table class="sale-detail-table" >
+    <tr class="sale-detail-table-headers">
+        <td>Nro de Compra</td>
+        <td>Usuario</td>
+        <td>Cantidad de items</td>
+    </tr>
+
+    <% for( let i = 0; i < saleDetail.length; i++ ) { %>
+        <tr class="sale-detail-table-row <%= i%2==0?'light-row':'dark-row' %> ">
+            <td><%= saleDetail[i].sale_id %></td>
+            <td><%= saleDetail[i].cart_user.user_name %></td>
+            <td><%= cartDetail[i].cart_product.product_name %></td>
+            <td><%= cartDetail[i].product_qty %></td>
+            <td><%= cartDetail[i].product_price %></td>        
+        </tr>
+    <% } %>
+</table>
+
+
+
+
+
+<%- include('../partials/linkWhatsApp') %>
+<%- include('../partials/footer') %>

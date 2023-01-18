@@ -11,7 +11,7 @@
             <% if (locals.errors && errors.item) { %>
                 <i class="fas fa-exclamation"></i>
                 <div class="form-error">
-                    <%= errors.item.msg %> 
+                    <%= errors.item.msg %>
                 </div>
             <% } %>
         </div>
@@ -20,24 +20,23 @@
             <% if (locals.errors && errors.description) { %>
                 <i class="fas fa-exclamation"></i>
                 <div class="form-error">
-                    <%= errors.description.msg %> 
+                    <%= errors.description.msg %>
                 </div>
             <% } %>
         </div>
         <div class="create-product-form-div">
             <select name="category"  class="create-product-form-input <%= locals.errors && errors.category ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.category : null %>">
                 <option value="default" selected>Seleccione una categoría</option>
-                <option value="chops" <%= locals.oldData && oldData.category == 'chops' ? 'selected' : null %>>Chops</option>
-                <option value="copas" <%= locals.oldData && oldData.category == 'copas' ? 'selected' : null %>>Copas</option>
-                <option value="jarras" <%= locals.oldData && oldData.category == 'jarras' ? 'selected' : null %>>Jarras</option>
-                <option value="tazas" <%= locals.oldData && oldData.category == 'tazas' ? 'selected' : null %>>Tazas</option>
-                <option value="vajilla" <%= locals.oldData && oldData.category == 'vajilla' ? 'selected' : null %>>Vajilla</option>
-                <option value="vasos" <%= locals.oldData && oldData.category == 'vasos' ? 'selected' : null %>>Vasos</option>
+                <% for( let i = 0; i < productCategories.length; i++ ) { %>
+                    <option value="<%= productCategories[i].product_category_name %>"  <%= locals.oldData && oldData.category == productCategories[i].product_category_name ? 'selected' : null %>><%= productCategories[i].product_category_name %></option>
+                <% } %>
             </select>
+
+
             <% if (locals.errors && errors.category) { %>
                 <i class="fas fa-exclamation fa-exclamation-select"></i>
                 <div class="form-error">
-                    <%= errors.category.msg %> 
+                    <%= errors.category.msg %>
                 </div>
             <% } %>
         </div>
@@ -46,7 +45,7 @@
             <% if (locals.errors && errors.price) { %>
                 <i class="fas fa-exclamation"></i>
                 <div class="form-error">
-                    <%= errors.price.msg %> 
+                    <%= errors.price.msg %>
                 </div>
             <% } %>
         </div>
@@ -55,7 +54,7 @@
             <% if (locals.errors && errors.discount) { %>
                 <i class="fas fa-exclamation"></i>
                 <div class="form-error">
-                    <%= errors.discount.msg %> 
+                    <%= errors.discount.msg %>
                 </div>
             <% } %>
         </div>
@@ -64,7 +63,7 @@
             <% if (locals.errors && errors.stock) { %>
                 <i class="fas fa-exclamation"></i>
                 <div class="form-error">
-                    <%= errors.stock.msg %> 
+                    <%= errors.stock.msg %>
                 </div>
             <% } %>
         </div>
@@ -73,7 +72,7 @@
             <% if (locals.errors && errors.image) { %>
                 <i class="fas fa-exclamation"></i>
                 <div class="form-error">
-                    <%= errors.image.msg %> 
+                    <%= errors.image.msg %>
                 </div>
             <% } %>
         </div>

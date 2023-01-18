@@ -1,19 +1,14 @@
 Usuarios
 
 Clientes
-Usuario: company1@gmail.com
-Password: pswcompany1
-Usuario: company2@gmail.com
-Password: pswcompany2
-Usuario: company3@gmail.com
-Password: pswcompany3
+Usuario: company1@gmail.com | Password: pswcompany1
+Usuario: company2@gmail.com | Password: pswcompany2 
+Usuario: company3@gmail.com | Password: pswcompany3
+Usuario: company4@gmail.com | Password: pswcompany4
+Usuario: company5@gmail.com | Password: pswcompany5
 
 Administradores
-Usuario: adm1@gmail.com
-Password: pswadm1
-Usuario: adm2@gmail.com
-Password: pswadm2
-Usuario: adm3@gmail.com
-Password: pswadm3
-Usuario: adm4@gmail.com
-Password: pswadm4 
+Usuario: adm1@gmail.com | Password: pswadm1
+Usuario: adm2@gmail.com | Password: pswadm2
+Usuario: adm3@gmail.com | Password: pswadm3
+

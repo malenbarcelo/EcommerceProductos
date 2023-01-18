@@ -8,50 +8,34 @@
 
 <form method="POST" action="/products?_method=DELETE" enctype="multipart/form-data">
     <div class="delete-product-form-div">
-        <input type="text" class="delete-product-form-input" name="item" placeholder="Código del producto" class="form-input" value = "<%= product.item %>" readonly>
+        <input type="text" class="delete-product-form-input" name="item" placeholder="Código del producto" class="form-input" value = "<%= product.product_name %>" readonly>
     </div>
     <div class="delete-product-form-div">
-        <input type="text" name="description" placeholder="Descripción"  class="delete-product-form-input" value = "<%= product.description %>">
-    </div>
-    <div class="delete-product-form-div">
-        <select name="category"  class="delete-product-form-input" >
-            <option <% if (product.category == 'chops') { %>
-                selected
-            <% } %> value="chops">Chops</option>
-            <option <% if (product.category == 'copas') { %>
-                selected
-            <% } %> value="copas">Copas</option>
-            <option <% if (product.category == 'jarras') { %>
-                selected
-            <% } %>  value="jarras">Jarras</option>
-            <option <% if (product.category == 'tazas') { %>
-                selected
-            <% } %>  value="tazas">Tazas</option>
-            <option <% if (product.category == 'vajilla') { %>
-                selected
-            <% } %> value="vajilla">Vajilla</option>
-            <option <% if (product.category == 'vasos') { %>
-                selected
-            <% } %> value="vasos">Vasos</option>
-        </select>
-    </div>
-    <div class="delete-product-form-div">
-        <input type="number" class="delete-product-form-input" name="price" placeholder="Precio (AR$)" value = "<%= product.price %>">
-    </div>
-    <div class="delete-product-form-div">
-        <input type="number" name="discount" placeholder="Descuento (%) " class="delete-product-form-input" value = "<%= product.discount *100%>">
+        <input type="text" name="description" placeholder="Descripción"  class="delete-product-form-input" value = "<%= product.product_description %>" readonly>
     </div>
 
     <div class="delete-product-form-div">
-        <input type="number" name="stock" placeholder="Stock (unidades)" class="delete-product-form-input" value = "<%= product.stock %>">
+        <input type="text" name="category" placeholder="Categoría"  class="delete-product-form-input" value = "<%= product.product_category.product_category_name %>" readonly>
+    </div>
+    <div class="delete-product-form-div">
+        <input type="number" class="delete-product-form-input" name="price" placeholder="Precio (AR$)" value = "<%= product.price %>" readonly>
+    </div>
+    <div class="delete-product-form-div">
+        <input type="number" name="discount" placeholder="Descuento (%) " class="delete-product-form-input" value = "<%= product.discount %>" readonly>
     </div>
 
     <div class="delete-product-form-div">
-    <img src="/images/productos/<%= product.image %>" alt="<%= product.image %>" class="edit-product-form-image">
+        <input type="number" name="stock" placeholder="Stock (unidades)" class="delete-product-form-input" value = "<%= product.stock %>" readonly>
+    </div>
+
+    <div class="delete-product-form-div">
+    <img src="/images/productos/<%= product.product_image %>" alt="<%= product.product_image %>" class="edit-product-form-image">
     </div>
 
     <div class="delete-product-form-buttons">
         <button type="submit" class="delete-product-form-button">Eliminar producto</button>
+        <a href="/products"><button type="button" class="delete-product-form-button">Cancelar</button></a>
+        
     </div>
 </form>
 

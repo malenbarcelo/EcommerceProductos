@@ -1,7 +1,4 @@
-<body>
-
 <header>
-
     <div class="main-header-top">
 
         <div class="burger-menu">
@@ -13,9 +10,13 @@
         </div>
 
         <div class="search-bar-magnifying-glass">
-            <input type="text" name="" id="" placeholder = "Buscar productos" class="search-bar">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" name="search-bar" id="search-bar" placeholder = "Buscar productos" class="search-bar">
+            <div class="div-magnifying-glass">
+                <a href="#" id="search-link"><i class="fa-solid fa-magnifying-glass" id="id-fa-magnifying-glass"></i></a>
+            </div>
         </div>
+
+        
 
         <div class="magnifying-glass"><i class="fa-solid fa-magnifying-glass"></i></div>
 
@@ -27,12 +28,11 @@
                 <b class="user-logged">Bienvenido</b>
             <% } %>
             <% if (locals.isLogged) { %>
-                <img src="/images/usersImages/<%= locals.userLogged.image %> " alt="user-image" class="user-image">
+                <img src="/images/usersImages/<%= locals.userLogged.user_image %> " alt="user-image" class="user-image">
             <% } %>
             <% if (locals.userLogged) { %>
-                <b class="user-logged"><%= locals.userLogged.company %></b>
+                <b class="user-logged"><%= locals.userLogged.user_name %></b>
             <% } %>
-            
         </div>
 
         <div class="product-cart"><a href="/products/product-cart"><i class="fa-solid fa-cart-shopping"></i></a></div>
@@ -42,12 +42,16 @@
     <nav class="main-header-bottom">
         <ul class="menu">
             <li><a href="/">Inicio</a></li>
-            <li class="menu-products"><a href="/products">Productos<i class="fa-solid fa-chevron-down"></i></a>
+            <li class="menu-products"><a href="/products/page1">Productos<i class="fa-solid fa-chevron-down"></i></a>
                 <ul class="submenu-products">
+                    <li class="submenu"><a href="/products/products-filtered/botellas">Botellas</a></li>
+                    <li class="submenu"><a href="/products/products-filtered/chops">Chops</a></li>
                     <li class="submenu"><a href="/products/products-filtered/copas">Copas</a></li>
+                    <li class="submenu"><a href="/products/products-filtered/decantadores">Decantadores</a></li>
+                    <li class="submenu"><a href="/products/products-filtered/jarras">Jarras</a></li>
                     <li class="submenu"><a href="/products/products-filtered/tazas">Tazas</a></li>
-                    <li class="submenu"><a href="/products/products-filtered/vasos">Vasos</a></li>
                     <li class="submenu"><a href="/products/products-filtered/vajilla">Vajilla</a></li>
+                    <li class="submenu"><a href="/products/products-filtered/vasos">Vasos</a></li>
                 </ul>
             </li>
             <li class="menu-users"><a href="">Usuarios<i class="fa-solid fa-chevron-down"></i></a>
@@ -63,11 +67,10 @@
                     <% } %>
                 </ul>
             </li>
-            <% if (locals.userLogged && locals.userLogged.category == 'administrador') { %>
+            <% if (locals.userLogged && locals.userLogged.user_category_id == 1) { %>
                 <li><a href="/products/create-product">Crear Producto</a></li>                     
             <% } %>
-            
         </ul>
     </nav>
-
+    <script src="/js/header.js"></script>
 </header>

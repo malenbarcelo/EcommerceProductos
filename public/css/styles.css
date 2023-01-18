@@ -342,12 +342,14 @@ p{
         height: 30px;
         border-radius:20px;
         border: solid 1px white;
+        padding-left:20px
     }
 
     .fa-magnifying-glass{
         position:absolute;
         left:75%;
-        top:10px
+        top:10px;
+        color:black
     }
 
     .link-whatsapp{

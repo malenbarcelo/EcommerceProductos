@@ -13,8 +13,7 @@ const productFormsValidations = {
         .isNumeric().withMessage('El descuento debe ser numérico'),
         body('stock')
             .notEmpty().withMessage('Ingrese el stock. Si no hay stock, ingrese 0').bail()
-            .isNumeric().withMessage('El stock debe ser numérico'),
-        
+            .isNumeric().withMessage('El stock debe ser numérico'),        
         body('image').custom((value, { req }) => {
         let file = req.file
         let acceptedExtensions = ['.jpg','.png','.gif']               

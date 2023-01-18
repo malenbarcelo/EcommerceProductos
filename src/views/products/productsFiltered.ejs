@@ -6,12 +6,12 @@
 <div class="grid-products">
     <% products.forEach(product => { %>
         <div class="product">
-            <a href="/products/product-detail/<%= product.item %> " class="product-detail-link">
+            <a href="/products/product-detail/<%= product.product_name %> " class="product-detail-link">
                 <div class="div-description">
-                    <p class="description"><%= product.description %></p>
+                    <p class="description"><%= product.product_description %></p>
                 </div>
                 <div class="div-product-image">
-                    <img src="/images/productos/<%= product.image %>" alt="" class="product-image">
+                    <img src="/images/productos/<%= product.product_image %>" alt="" class="product-image">
                     <% if (product.stock==0) { %>
                         <div class="div-stock">
                             <p class="stock"><b>Sin stock</b></p>
@@ -27,16 +27,16 @@
                 <% } %>
             </div>
             <div class="div-add-to-cart">
-                <a href="/products/product-detail/<%= product.item %> " class="add-to-cart">Agregar al carrito</a>
+                <a href="/products/product-detail/<%= product.product_name %> " class="add-to-cart">Agregar al carrito</a>
             </div>
             
             <div class="div-flex-edit-delete">
                 <% if (locals.userLogged && locals.userLogged.category == 'administrador') { %>
                     <div class="div-edit-product">
-                        <a href="/products/edit-product/<%= product.item %> " class="btn-edit">Editar</a>
+                        <a href="/products/edit-product/<%= product.product_name %> " class="btn-edit">Editar</a>
                     </div>
                     <div class="div-delete-product">
-                        <a href="/products/delete-product/<%= product.item %> " class="btn-delete">Eliminar</a>
+                        <a href="/products/delete-product/<%= product.product_name %> " class="btn-delete">Eliminar</a>
                     </div>
                 <% } %>
             </div>

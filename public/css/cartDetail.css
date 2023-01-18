@@ -1,0 +1,21 @@
+.cart-detail-title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.cart-detail-table{
+    margin:auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cart-detail-table-headers{
+    background-color: grey;
+}
+
+.light-row{
+    background-color: rgb(248, 245, 245);
+}
+.dark-row{
+    background-color: rgb(206, 203, 203);
+}

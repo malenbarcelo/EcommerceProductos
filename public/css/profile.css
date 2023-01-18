@@ -6,6 +6,27 @@
     margin-top:20px
 }
 
+.div-profile-button{
+    background-color: grey;
+    border-radius: 5px;
+    border: none;
+    font-size: 13px;
+    padding:5px;
+    width:100px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.div-profile-button:hover{
+    background-color: rgb(163, 159, 159);
+}
+
+.div-profile-button a{
+    color:black;
+    text-decoration: none;
+}
+
 @media (min-width:478px){
     
 }

@@ -1,20 +1,23 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<h2 class="products-title">Bienvenido, <%= userLogged.company %> </h2>
+<h2 class="products-title">Bienvenido, <%= userLogged.user_name %> </h2>
 
 <div class="profile-div">
-    <img src="../images/usersImages/<%= userLogged.image %>" class="img-user-logged" alt="<%= userLogged.image %>">
+    <img src="../images/usersImages/<%= userLogged.user_image %>" class="img-user-logged" alt="<%= userLogged.user_image %>">
     <div class="company-data">
-        <p><b>Company: </b><%= userLogged.company %></p>
+        <p><b>Company: </b><%= userLogged.user_name %></p>
         <p><b>Email: </b><%= userLogged.email %></p>
-        <p><b>Rubro: </b><%= userLogged.sector %></p>
+        <p><b>Rubro: </b><%= userLogged.sector_name %></p>
         <p><b>Domicilio: </b><%= userLogged.address %></p>
         <p><b>Ciudad: </b><%= userLogged.city %></p>
-        <p><b>Teléfono: </b><%= userLogged.phoneNumber %></p>
+        <p><b>Teléfono: </b><%= userLogged.phone_number %></p>
         
+    </div>
+    <div class="div-profile-button">
+        <a href="/users/edit-profile">Editar perfil</a>
     </div>    
-</div>
+    
 
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>

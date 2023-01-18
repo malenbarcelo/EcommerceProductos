@@ -141,6 +141,10 @@
     column-gap:3px
 }
 
+.div-pagination{
+    display:none
+}
+
 @media (min-width:478px){
     .grid-products{
         grid-template-columns: 1fr 1fr;
@@ -149,6 +153,20 @@
     .product{
         width:45vw
     }
+
+    .div-pagination{
+        display:block;
+        text-align: center;
+        margin-top:20px;
+        margin-bottom:20px;        
+    }
+
+    .span-pagination{
+        padding:10px;
+        
+    }
+
+    
 }
 
 @media (min-width:769px){
