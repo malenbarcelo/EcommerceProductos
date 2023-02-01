@@ -2,27 +2,31 @@
 <%- include('../partials/header') %>
 
 <!-- Formulario de creación de producto-->
-
-
+<!-- action="/products?_method=PUT"-->
 <h3 class="edit-product-form-title">Datos del producto a editar</h3>
 
-<form method="POST" action="/products?_method=PUT" enctype="multipart/form-data">
-    <div class="edit-product-form-div">
-            <input type="text" name="item" id="item" placeholder="Código del producto" class="edit-product-form-input" value="<%= locals.oldData ? oldData.item : product.product_name %>" readonly>
+<div class="div-errors">
+    <ul>
+    </ul>
+</div>
+
+<form method="POST" action="/products?_method=PUT" method="POST" class = "form-edit-product" enctype="multipart/form-data">
+    <div class="edit-product-form-div item-div">
+            <input type="text" name="item" id="item" placeholder="Código del producto" class="edit-product-form-input item" value="<%= locals.oldData ? oldData.item : product.product_name %>" readonly>
     </div>
 
-    <div class="edit-product-form-div">
-        <input type="text" id="description" name="description" placeholder="Descripción" class="edit-product-form-input <%= locals.errors && errors.description ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.description : product.product_description %>">
+    <div class="edit-product-form-div description-div">
+        <input type="text" id="description" name="description" placeholder="Descripción" class="edit-product-form-input description <%= locals.errors && errors.description ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.description : product.product_description %>">
         <% if (locals.errors && errors.description) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation description-exclamation"></i>
+            <div class="form-error description-error">
                 <%= errors.description.msg %>
             </div>
         <% } %>
     </div>
 
-    <div class="edit-product-form-div">
-        <select name="category"  class="edit-product-form-input <%= locals.errors && errors.category ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.category : null %>">
+    <div class="edit-product-form-div category-div">
+        <select name="category"  class="edit-product-form-input category <%= locals.errors && errors.category ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.category : null %>">
 
             <% for( let i = 0; i < productCategories.length; i++ ) { %>
                 <option value="<%= productCategories[i].product_category_name %>" <%= (locals.oldData && oldData.category == productCategories[i].product_category_name || selectedProductCategory.product_category_name == productCategories[i].product_category_name) ? 'selected' : null %>>
@@ -32,38 +36,38 @@
         </select>
 
         <% if (locals.errors && errors.category) { %>
-            <i class="fas fa-exclamation fa-exclamation-select"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation fa-exclamation-select category-exclamation"></i>
+            <div class="form-error category-error">
                 <%= errors.category.msg %>
             </div>
         <% } %>
     </div>
 
-    <div class="edit-product-form-div">
-        <input type="text" name="price" id="price" placeholder="Precio (AR$)" class="edit-product-form-input <%= locals.errors && errors.price ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.price : product.price %>">
+    <div class="edit-product-form-div price-div">
+        <input type="text" name="price" id="price" placeholder="Precio (AR$)" class="edit-product-form-input price <%= locals.errors && errors.price ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.price : product.price %>">
         <% if (locals.errors && errors.price) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation price-exclamation"></i>
+            <div class="form-error price-error">
                 <%= errors.price.msg %>
             </div>
         <% } %>
     </div>
 
-    <div class="edit-product-form-div">
-        <input type="text" name="discount" id="discount" placeholder="Descuento (%) " class="edit-product-form-input <%= locals.errors && errors.discount ? 'is-invalid' : null %>"  value="<%= locals.oldData ? oldData.discount : product.discount %>">
+    <div class="edit-product-form-div discount-div">
+        <input type="text" name="discount" id="discount" placeholder="Descuento (%) " class="edit-product-form-input discount2 <%= locals.errors && errors.discount ? 'is-invalid' : null %>"  value="<%= locals.oldData ? oldData.discount : product.discount %>">
         <% if (locals.errors && errors.discount) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation discount2-exclamation"></i>
+            <div class="form-error discount2-error">
                 <%= errors.discount.msg %>
             </div>
         <% } %>
     </div>
 
-    <div class="edit-product-form-div">
-        <input type="text" name="stock" id="stock" placeholder="Stock (unidades)" class="edit-product-form-input <%= locals.errors && errors.stock ? 'is-invalid' : null %>"  value="<%= locals.oldData ? oldData.stock : product.stock %>">
+    <div class="edit-product-form-div stock-div">
+        <input type="text" name="stock" id="stock" placeholder="Stock (unidades)" class="edit-product-form-input stock <%= locals.errors && errors.stock ? 'is-invalid' : null %>"  value="<%= locals.oldData ? oldData.stock : product.stock %>">
         <% if (locals.errors && errors.stock) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation stock-exclamation"></i>
+            <div class="form-error stock-error">
                 <%= errors.stock.msg %>
             </div>
         <% } %>
@@ -73,17 +77,17 @@
     <img src="/images/productos/<%= locals.oldData ? oldData.image : product.product_image %>" alt="<%= locals.oldData ? oldData.item : product.product_item %>" class="edit-product-form-image">
     </div>
 
-    <div class="edit-product-form-div">
-        <input type="file" name="image" id="image" class="edit-product-form-input" >
+    <div class="edit-product-form-div image-div">
+        <input type="file" name="image" id="image" class="edit-product-form-input image" >
     </div>
 
     <div class="edit-product-form-buttons">
         <button type="submit" class="edit-product-form-button">Guardar cambios</button>
     </div>
 
-
-
 </form>
+
+<script src="/js/editProduct.js"></script>
 
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>

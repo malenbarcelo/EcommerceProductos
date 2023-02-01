@@ -70,8 +70,18 @@
     margin-top:10px
 }
 
+.div-errors{
+    color:rgb(209, 31, 31);
+    width: 60vw;
+    margin:auto;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    font-size: 15px;
+}
+
+
 @media (min-width:478px){
-    .register-form-input,.login-form-input,.create-product-form-input,.edit-product-form-input,.delete-product-form-input{
+    .register-form-input,.login-form-input,.create-product-form-input,.edit-product-form-input,.delete-product-form-input, .div-errors{
         width: 400px;
     }
 }

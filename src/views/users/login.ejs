@@ -3,22 +3,27 @@
 
 <h3 class="login-form-title">Ingresar</h3>
 
-<form action="/users/login" method="POST" name="form-register">
-    <div class="login-form-div">
-        <input type="text" name="email" placeholder="Email" class="login-form-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>">
+<div class="div-errors">
+    <ul>
+    </ul>
+</div>
+
+<form action="/users/login" method="POST" name="form-register" class="form-login"> 
+    <div class="login-form-div email-div">
+        <input type="text" name="email" placeholder="Email" class="login-form-input email <%= locals.errors && errors.email ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.email : null %>">
         <% if (locals.errors && errors.email) { %>
             <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <div class="form-error email-error">
                 <%= errors.email.msg %> 
             </div>
         <% } %>
     </div>
 
-    <div class="login-form-div">
-        <input type="password" name="password" placeholder="Contraseña" class="login-form-input <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+    <div class="login-form-div password-div">
+        <input type="password" name="password" placeholder="Contraseña" class="login-form-input password <%= locals.errors && errors.password ? 'is-invalid' : null %>">
         <% if (locals.errors && errors.password) { %>
             <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <div class="form-error password-error">
                 <%= errors.password.msg %> 
             </div>
         <% } %>
@@ -38,6 +43,8 @@
     </div>
 
 </form>
+
+<script src="/js/userLogin.js"></script>
 
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>

@@ -1,3 +1,6 @@
+/*Delete database if exists*/
+DROP DATABASE IF EXISTS sio2;
+
 /*Crear la base de datos*/
 CREATE DATABASE sio2;
 
@@ -39,7 +42,7 @@ CREATE TABLE sio2.user_sectors (
 /*Crear la tabla de usuarios*/
 CREATE TABLE sio2.users (
     user_id INT NOT NULL AUTO_INCREMENT,
-    user_name VARCHAR(50) NOT NULL UNIQUE,
+    user_name VARCHAR(50) NOT NULL,
     cuit_cuil BIGINT NOT NULL,
     user_sector_id INT NOT NULL,
     user_category_id INT NOT NULL,

@@ -1,10 +1,21 @@
 const {body} = require('express-validator')
 const path = require('path');
+const db = require('../../database/models');
+
 
 const productFormsValidations = {
     productFormValidations: [
-        body('item').notEmpty().withMessage('Ingrese el código del producto'),
-        body('description').notEmpty().withMessage('Ingrese una descripción'),
+        body('item').notEmpty().withMessage('Ingrese el código del producto')
+                    .isLength({min:2}).withMessage('El código debe tener al menos 2 caracteres')
+                    .custom(async(value, { req }) => {
+                        const newProduct = await db.Products.findOne({where:{product_name:req.body.item}})
+                        if(newProduct){
+                            throw new Error('El producto ingresado ya existe')
+                        }
+                        return true
+                    }),
+        body('description').notEmpty().withMessage('Ingrese una descripción')
+                           .isLength({min:10}).withMessage('La descripción debe tener al menos 10 carcateres'),
         body('price')
             .notEmpty().withMessage('Ingrese el precio del producto').bail()
             .isNumeric().withMessage('El precio debe ser numérico'),
@@ -16,7 +27,7 @@ const productFormsValidations = {
             .isNumeric().withMessage('El stock debe ser numérico'),        
         body('image').custom((value, { req }) => {
         let file = req.file
-        let acceptedExtensions = ['.jpg','.png','.gif']               
+        let acceptedExtensions = ['.jpg','.jpeg','.png','.gif']               
         if(!file){
             throw new Error('Tienes que subir una imagen')
         }else{

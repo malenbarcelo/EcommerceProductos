@@ -4,31 +4,36 @@
 <!-- Formulario de registro-->
 <h3 class="register-form-title">Formulario de registro</h3>
 
-<form action="/users/register" method="POST" name="form-register" enctype="multipart/form-data">
-    <div class="register-form-div">
+<div class="div-errors">
+    <ul>
+    </ul>
+</div>
+
+<form action="/users/register" method="POST" name="form-register" class = "form-register" enctype="multipart/form-data">
+    <div class="register-form-div company-div">
         
-        <input type="text" name="company" placeholder="Razón Social" class="register-form-input <%= locals.errors && errors.company ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.company : null %>">
+        <input type="text" name="company" placeholder="Razón Social" class="register-form-input company <%= locals.errors && errors.company ? 'is-invalid' : null %>" value="<%= locals.oldData ? oldData.company : null %>">
 
         <% if (locals.errors && errors.company) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation company-exclamation"></i>
+            <div class="form-error compnay-error">
                 <%= errors.company.msg %> 
             </div>
         <% } %>
     </div>
 
     <div class="register-form-div">
-        <input type="text" name="cuit" class="register-form-input <%= locals.errors && errors.cuit ? 'is-invalid' : null %>" placeholder="CUIT" value="<%= locals.oldData ? oldData.cuit : null %>">
+        <input type="text" name="cuit" class="register-form-input cuit <%= locals.errors && errors.cuit ? 'is-invalid' : null %>" placeholder="CUIT" value="<%= locals.oldData ? oldData.cuit : null %>">
         <% if (locals.errors && errors.cuit) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation cuit-exclamation"></i>
+            <div class="form-error cuit-error">
                 <%= errors.cuit.msg %> 
             </div>
         <% } %>
     </div>
 
     <div class="register-form-div">
-        <select name="sector" class="register-form-input <%= locals.errors && errors.sector ? 'is-invalid' : null %>">
+        <select name="sector" class="register-form-input sector <%= locals.errors && errors.sector ? 'is-invalid' : null %>">
             <option value="default" selected>Seleccione un rubro</option>
             <option value="bazar" <%= locals.oldData && oldData.sector == 'bazar' ? 'selected' : null %>>Bazar</option>
             <option value="distribuidor" <%= locals.oldData && oldData.sector == 'distribuidor' ? 'selected' : null %>>Distribuidor</option>
@@ -37,78 +42,78 @@
             <option value="otros" <%= locals.oldData && oldData.sector == 'otros' ? 'selected' : null %>>Otros</option>
         </select>
         <% if (locals.errors && errors.sector) { %>
-            <i class="fas fa-exclamation fa-exclamation-select"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation fa-exclamation-select sector-exclamation"></i>
+            <div class="form-error sector-error">
                 <%= errors.sector.msg %> 
             </div>
         <% } %>
     </div>
 
-    <div class="register-form-div">
-        <input type="text" name="email" class="register-form-input <%= locals.errors && errors.email ? 'is-invalid' : null %>" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
+    <div class="register-form-div email-div">
+        <input type="text" name="email" class="register-form-input email <%= locals.errors && errors.email ? 'is-invalid' : null %>" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
         <% if (locals.errors && errors.email) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation email-exclamation"></i>
+            <div class="form-error email-error">
                 <%= errors.email.msg %> 
             </div>
         <% } %>
     </div>
 
     <div class="register-form-div">
-        <input type="text" name="address" class="register-form-input <%= locals.errors && errors.address ? 'is-invalid' : null %>" placeholder="Domicilio" value="<%= locals.oldData ? oldData.address : null %>">
+        <input type="text" name="address" class="register-form-input address <%= locals.errors && errors.address ? 'is-invalid' : null %>" placeholder="Domicilio" value="<%= locals.oldData ? oldData.address : null %>">
         <% if (locals.errors && errors.address) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation address-exclamation"></i>
+            <div class="form-error address-error">
                 <%= errors.address.msg %> 
             </div>
         <% } %>
     </div>
 
     <div class="register-form-div">
-        <input type="text" name="city" class="register-form-input <%= locals.errors && errors.city ? 'is-invalid' : null %>" placeholder="Localidad" value="<%= locals.oldData ? oldData.city : null %>">
+        <input type="text" name="city" class="register-form-input city <%= locals.errors && errors.city ? 'is-invalid' : null %>" placeholder="Localidad" value="<%= locals.oldData ? oldData.city : null %>">
         <% if (locals.errors && errors.city) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation city-exclamation"></i>
+            <div class="form-error city-error">
                 <%= errors.city.msg %> 
             </div>
         <% } %>
     </div>
 
     <div class="register-form-div">
-        <input type="text" name="phoneNumber" class="register-form-input <%= locals.errors && errors.phoneNumber ? 'is-invalid' : null %>" placeholder="Teléfono" value="<%= locals.oldData ? oldData.phoneNumber : null %>">
+        <input type="text" name="phoneNumber" class="register-form-input phoneNumber <%= locals.errors && errors.phoneNumber ? 'is-invalid' : null %>" placeholder="Teléfono" value="<%= locals.oldData ? oldData.phoneNumber : null %>">
         <% if (locals.errors && errors.phoneNumber) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation phoneNumber-exclamation"></i>
+            <div class="form-error phone-error">
                 <%= errors.phoneNumber.msg %> 
             </div>
         <% } %>
     </div>
 
-    <div class="register-form-div">
-        <input type="password" name="password" class="register-form-input <%= locals.errors && errors.password ? 'is-invalid' : null %>" placeholder="Contraseña">
+    <div class="register-form-div password-div">
+        <input type="password" name="password" class="register-form-input password <%= locals.errors && errors.password ? 'is-invalid' : null %>" placeholder="Contraseña">
         <% if (locals.errors && errors.password) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation password-exclamation"></i>
+            <div class="form-error password-error">
                 <%= errors.password.msg %> 
             </div>
         <% } %>
     </div>
 
     <div class="register-form-div">
-        <input type="password" name="passwordConfirmation" class="register-form-input <%= locals.errors && errors.passwordConfirmation ? 'is-invalid' : null %>" placeholder="Confirmar contraseña" >
+        <input type="password" name="passwordConfirmation" class="register-form-input passwordConfirmation <%= locals.errors && errors.passwordConfirmation ? 'is-invalid' : null %>" placeholder="Confirmar contraseña" >
         <% if (locals.errors && errors.passwordConfirmation) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation passwordConfirmation-exclamation"></i>
+            <div class="form-error passwordConfirmation-error">
                 <%= errors.passwordConfirmation.msg %> 
             </div>
         <% } %>        
     </div>
 
-    <div class="register-form-div">
-        <input type="file" class="register-form-input" name="image">
+    <div class="register-form-div image-div">
+        <input type="file" class="register-form-input image <%= locals.errors && errors.image ? 'is-invalid' : null %>" name="image">
         <% if (locals.errors && errors.image) { %>
-            <i class="fas fa-exclamation"></i>
-            <div class="form-error">
+            <i class="fas fa-exclamation image-exclamation"></i>
+            <div class="form-error image-error">
                 <%= errors.image.msg %> 
             </div>
         <% } %>
@@ -120,6 +125,8 @@
     </div>
 
 </form>
+
+<script src="/js/userRegister.js"></script>
 
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>

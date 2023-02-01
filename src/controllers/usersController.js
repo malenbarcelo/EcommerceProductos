@@ -46,7 +46,20 @@ const usersController = {
             })
             return res.redirect('/users/profile')
         }catch(error){
+            const newUser = req.body
+            newUser.password = bcrypt.hashSync(req.body.password,10)
+            console.log('user_name:' + req.body.company)
+            console.log('cuit_cuil:' + req.body.cuit)
+            //console.log('user_sector_id:' + user_sector.dataValues.user_sector_id)
+            console.log('user_category_id:' + 2)
+            console.log('email:' + req.body.email)
+            console.log('address:' + req.body.address)
+            console.log('city:' + req.body.city)
+            console.log('phone_number:' + req.body.phoneNumber)
+            console.log('user_image:' + newUser.image)
+            console.log('password:' + newUser.password)
             return res.send('Ups, algo salió mal')
+            
         }
     },
     login: (req,res) => {

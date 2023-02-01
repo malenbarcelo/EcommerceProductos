@@ -94,7 +94,9 @@ const productsController = {
     edit: async (req,res) => {
         const productItem = req.params.productItem
         const productCategories = await db.Product_categories.findAll()
+
         try{
+            
             const selectedProduct = await db.Products.findOne({where:{product_name:productItem}})
             const selectedProductCategory = await db.Product_categories.findOne({
                 where:{
@@ -126,9 +128,16 @@ const productsController = {
                     }
             })
 
-            if ((resultValidation.errors.length > 1) || (resultValidation.errors.length == 1 && resultValidation.errors[0].param != 'image')){
-                oldData.image=productToEdit.product_image
-                return res.render('products/editProduct',{
+            if (resultValidation.errors.length > 0){
+                let errors = 0
+                for(let i = 0; i < resultValidation.errors.length; i++){
+                    if (resultValidation.errors[i].param != 'item' && resultValidation.errors[i].param != 'image'){
+                        errors += 1
+                    }
+                }
+                if (errors > 0){
+                    oldData.image=productToEdit.product_image
+                    return res.render('products/editProduct',{
                     errors:resultValidation.mapped(),
                     oldData: oldData,
                     title:'Editar producto',
@@ -153,8 +162,11 @@ const productsController = {
                         stock: req.body.stock,
                         product_image: productImage},
                         {where: {product_name:productItem}})
+
                     return res.redirect('/products/page1')
                 }
+            }
+    
         }catch(error){
             return res.send('Ups, algo salió mal')
         }
