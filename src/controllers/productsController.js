@@ -50,7 +50,8 @@ const productsController = {
         }
     },
     cart: (req,res) => {
-        res.render('products/productCart',{title:'Tu carrito de compras'})
+        console.log('hola')
+        return res.render('products/productCart.ejs',{title:'Tu carrito de compras'})
     },
     create: async (req,res) => {
         try{
