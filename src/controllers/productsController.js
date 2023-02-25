@@ -11,6 +11,7 @@ const productsController = {
     allProducts: async(req,res) => {
         try{
             const page = req.params.page
+            const pageNumber = page.replace('page','')
             const offset = 12 * (page.replace('page','')-1)
             const products = await db.Products.findAll({
                 include: [{association:'product_category'}],
@@ -18,7 +19,11 @@ const productsController = {
                 limit:12
             })
             const allProducts = await db.Products.findAll()
-            return res.render('products/products',{title:'Productos',products,allProducts})
+            return res.render('products/products',{
+                title:'Productos',
+                products,
+                allProducts,
+                pageNumber})
 
         }catch(error){
             return res.send('Ups, algo salió mal')
@@ -118,7 +123,7 @@ const productsController = {
         const resultValidation = validationResult(req)
         const productItem = req.body.item
         const oldData = req.body
-
+        
         try{
             let productToEdit = await db.Products.findOne({where:{product_name:productItem}})
             let productImage = ''
@@ -148,8 +153,10 @@ const productsController = {
                     //Si no se carga ningún archivo, se coloca la imagen que ya estaba
                     if(!req.file){
                         productImage = productToEdit.product_image
+                        
                     }else{
                         productImage = req.file.filename
+                        console.log(req.file.filename)
                     }
                     //Modifico la base de datos
                     const categoryId = await db.Product_categories.findOne({where:{product_category_name:req.body.category }})
@@ -163,6 +170,8 @@ const productsController = {
                         stock: req.body.stock,
                         product_image: productImage},
                         {where: {product_name:productItem}})
+
+                        console.log(req.file)
 
                     return res.redirect('/products/page1')
                 }

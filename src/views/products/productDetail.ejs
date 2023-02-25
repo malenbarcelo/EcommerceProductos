@@ -1,20 +1,30 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<div class="product-div">
-    <div class="product-title-div">
-        <h5 class="product-title"><%= selectedProduct.product_description %></h5>
-    </div>
+<body class="body-product-detail">
+    <div class="product-div">
+        <div class="product-title-div">
+            <h5 class="product-title"><%= selectedProduct.product_description %></h5>
+        </div>
+        
     
+        <img src="/images/productos/<%= selectedProduct.product_image %>" class="img-product-detail" alt="Producto 1">
+        <div class="product-data">
+            <p><b>Producto: </b><%= selectedProduct.product_name %>  </p>
+            <p class="Precio"><b>Precio: </b>$ <%= selectedProduct.price %></p>
+            <p class="Precio"><b>Medida: </b>Altura: 12 cms / Diámetro: 9 cms.</p>
+            <p class="Precio"><b>Volumen de la caja: </b>0.025 m3</p>
+            <p class="Precio"><b>Unidades por caja: </b>12</p>
 
-    <img src="/images/productos/<%= selectedProduct.product_image %>" class="img-product-detail" alt="Producto 1">
-    <div class="product-data">
-        <p>Producto <%= selectedProduct.product_name %>  </p>
-        <p class="Precio">$ <%= selectedProduct.price %></p>
-        <button class="btn-agregar"> Agregar al carrito </button> 
-    </div>
+            
+        
+        </div>
+    
+    </div>      
+    
+</body>
 
-</div>        
+  
 
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>

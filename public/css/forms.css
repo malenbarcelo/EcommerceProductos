@@ -5,8 +5,10 @@
 }
 
 .register-form-input,.login-form-input,.create-product-form-input,.edit-product-form-input,.delete-product-form-input{
-    border: 1px rgb(165, 164, 164) solid;
-    border-radius:5px;
+    border:none;
+    border-bottom: 1px rgb(165, 164, 164) solid;
+    border-radius:0px;
+    background-color: rgb(239, 227, 227);
     width: 60vw;
     height: 30px;
     margin: auto;

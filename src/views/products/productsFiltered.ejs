@@ -26,9 +26,9 @@
                     <b class="discount"><%= product.discount * 100 %>% OFF</b>
                 <% } %>
             </div>
-            <div class="div-add-to-cart">
+            <!---<div class="div-add-to-cart">
                 <a href="/products/product-detail/<%= product.product_name %> " class="add-to-cart">Agregar al carrito</a>
-            </div>
+            </div> --->
             
             <div class="div-flex-edit-delete">
                 <% if (locals.userLogged && locals.userLogged.category == 'administrador') { %>

@@ -1,0 +1,80 @@
+.index-body{
+    background-color: rgb(248, 227, 227);
+}
+
+
+.banner-image{
+    width:100%;
+    position:relative
+}
+.slogan{
+    position:absolute;
+    top: 300px;
+    left:1020px;
+    width:25%
+}
+.p-slogan{
+    color:rgb(247, 221, 221);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+
+.div-categories{
+    display:flex;
+    margin-top:20px;
+    justify-content: space-around;
+}
+
+.div-category{
+    padding:20px;
+    border-radius: 5px;
+    background-color: rgb(235, 207, 212);
+}
+.div-category:hover{
+    
+    background-color: rgb(206, 169, 174);
+}
+.div-category-image{
+    height:250px;
+    border-radius: 5px;
+}
+.div-button{
+    text-align: center;
+    margin-bottom:15px
+    
+}
+.link-index{
+    background-color:rgb(190, 125, 136);
+    border-radius:5px;
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    font-size: 20px;
+    color:rgb(253, 238, 238);
+    text-decoration: none
+}
+
+.link-index:hover{
+    text-decoration: none;
+    background-color: rgb(192, 94, 110);
+    color:rgb(253, 238, 238);
+}
+
+.div-category-link:hover{
+    text-decoration: none;
+    background-color: rgb(192, 94, 110);
+    color:rgb(253, 238, 238);
+}
+
+.div-description{
+    width: 220px;
+    height: 90px;
+    margin:auto;
+    margin-top:10px;
+    margin-bottom:0px;
+    color:rgb(152, 75, 88);
+    font-size: 18px;
+}

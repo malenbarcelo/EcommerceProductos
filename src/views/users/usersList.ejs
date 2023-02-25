@@ -1,0 +1,28 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<h2 class="products-title">Lista de Usuarios</h2>
+
+<body class="users-body">
+    
+
+
+<table class="users-table" >
+    <tr class="users-table-headers">
+        <td class="company">Usuario</td>
+        <td class="email">Email</td>
+        <td class="detail">Detalle</td>
+    </tr>
+
+    <% for( let i = 0; i < users.users.length; i++ ) { %>
+        <tr class="users-table-row <%= i%2==0?'light-row':'dark-row' %> ">
+            <td class="company2"><%= users.users[i].user_name %></td>
+            <td class="user-email"><%= users.users[i].email %></td>
+            <td class="detail"><a href="/users/userprofile/<%= users.users[i].user_name %>" class="a-detail">+ info</a></td>
+        </tr>
+    <% } %>
+
+</table>
+</body>
+
+<%- include('../partials/footer') %>

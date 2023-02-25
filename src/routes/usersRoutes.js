@@ -6,6 +6,7 @@ const multer = require('multer')
 const path = require('path')
 const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
+const admMiddleware = require('../middlewares/admMiddleware')
 
 //Configuro Multer
 const storage = multer.diskStorage({
@@ -30,5 +31,7 @@ router.get('/forgotPassword',usersController.forgotPassword)
 router.get('/logout',authMiddleware,usersController.logout)
 router.get('/profile',authMiddleware,usersController.viewProfile)
 router.get('/edit-profile',usersController.editProfile)
+router.get('/list',admMiddleware,usersController.usersListRender)
+router.get('/userprofile/:name',admMiddleware,usersController.userProfile)
 
 module.exports = router

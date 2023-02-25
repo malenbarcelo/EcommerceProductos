@@ -58,7 +58,7 @@ CREATE TABLE sio2.users (
 );
 
 /*Crear la tabla de Carro de compras*/
-CREATE TABLE sio2.cart_details (
+/*CREATE TABLE sio2.cart_details (
     cart_detail_id INT NOT NULL AUTO_INCREMENT,
     sale_id INT NOT NULL,
     product_id INT NOT NULL,
@@ -68,4 +68,4 @@ CREATE TABLE sio2.cart_details (
     PRIMARY KEY (cart_detail_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
-)
+)*/

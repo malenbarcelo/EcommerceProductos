@@ -1,0 +1,33 @@
+.users-body{
+    background-color: white;
+}
+
+td{
+    text-align: center;
+}
+
+.users-table-headers{
+    background-color: rgb(86, 86, 85);
+    color:white;
+}
+
+.users-table{
+    margin:auto
+}
+
+.company2{
+    width:120px
+}
+
+.user-email{
+    width:200px
+}
+
+.detail{
+    width:100px
+}
+
+.a-detail:hover{
+    text-decoration:none
+}
+

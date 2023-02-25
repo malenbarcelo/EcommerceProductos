@@ -1,0 +1,20 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<h2 class="products-title"><%= user.dataValues.user_name %> </h2>
+
+<div class="profile-div">    
+    <img src="/images/usersImages/<%= user.dataValues.user_image %>"class="img-user-logged" alt="<%= user.dataValues.user_name %>">
+    <div class="company-data">
+        <p><b>Company: </b><%= user.dataValues.user_name %></p>
+        <p><b>Email: </b><%= user.dataValues.email %></p>
+        <p><b>Rubro: </b><%= userSector.dataValues.user_sector_name %></p>
+        <p><b>Domicilio: </b><%= user.dataValues.address %></p>
+        <p><b>Ciudad: </b><%= user.dataValues.city %></p>
+        <p><b>Teléfono: </b><%= user.dataValues.phone_number %></p>
+        
+    </div>
+      
+
+<%- include('../partials/linkWhatsApp') %>
+<%- include('../partials/footer') %>

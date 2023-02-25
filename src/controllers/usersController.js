@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs')
 const usersFilePath = path.resolve('./src/data/usersJSON.json');
 const {validationResult} = require('express-validator')
 const db = require('../../database/models');
-
+const fetch = require('cross-fetch')
 
 let users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -59,7 +59,7 @@ const usersController = {
             console.log('user_image:' + newUser.image)
             console.log('password:' + newUser.password)
             return res.send('Ups, algo salió mal')
-            
+
         }
     },
     login: (req,res) => {
@@ -92,7 +92,7 @@ const usersController = {
         }
     },
     logout: (req,res) => {
-       res.clearCookie('userEmail') 
+       res.clearCookie('userEmail')
        req.session.destroy()
        return res.redirect('/')
     },
@@ -104,12 +104,73 @@ const usersController = {
             title:'Perfil',
             userLogged: req.session.userLogged
         })
-        console.log(userLogged)
+
     },
     editProfile: (req,res) =>{
-        return res.send('Estamos trabajando en la edición del perfil')
-    }
+        return res.render('users/editProfile',{title:'Editar perfil'})
+    },
+    usersList: async(req,res) =>{
+        try{
+            let usersDb = await db.Users.findAll({attributes: ['user_id', 'user_name','email']})
+            users=[]
+            for(let i=0;i<usersDb.length;i++){
+                users.push({'user_id':usersDb[i].user_id, 'user_name':usersDb[i].user_name,'email':usersDb[i].email,'detail':'api/users/' + usersDb[i].user_id})
+            }
 
+            return res.status(200).json({
+                count: users.length,
+                users: users,
+                status:200
+            })
+
+        }catch(error){
+            return res.json('Ups, algo salió mal')
+        }
+    },
+    /*usersListRender:async(req,res)=>{
+        return res.render('users/usersList',
+        {title:'Usuarios'})
+    },*/
+    usersListRender:async(req,res)=>{
+        fetch('http://localhost:3000/api/users/')
+            .then(response => response.json())
+            .then(users => {
+                return res.render('users/usersList',{title:'Usuarios',users})
+            })
+
+    },
+    usersFiltered:async(req,res) =>{
+        try{
+            let userFiltered = await db.Users.findByPk(req.params.id)
+
+            return res.status(200).json({
+                user: userFiltered,
+                status:200
+            })
+        }catch(error){
+            return res.json('Ups, algo salió mal')
+        }
+    },
+    userProfile: async(req,res) => {
+        try{
+            const userName = req.params.name
+            let user = await db.Users.findOne({
+                where:{user_name:userName}
+            })
+            const userSector = await db.User_sectors.findOne({
+                where:{user_sector_id:user.dataValues.user_sector_id}
+            })
+            return res.render('users/userProfile',{
+                title:'Perfil',
+                user,
+                userSector
+            })
+        }catch(error){
+            return res.send('Ups, algo salió mal')
+        }
+
+    },
 }
 
 module.exports = usersController
+

@@ -3,6 +3,11 @@
 
 <!-- Formulario de creación de producto-->
 <!-- action="/products?_method=PUT"-->
+
+<body class="body-edit-product">
+    
+
+
 <h3 class="edit-product-form-title">Datos del producto a editar</h3>
 
 <div class="div-errors">
@@ -83,11 +88,12 @@
 
     <div class="edit-product-form-buttons">
         <button type="submit" class="edit-product-form-button">Guardar cambios</button>
+        <a href="/products/page1"><button type="button" class="delete-product-form-button">Cancelar</button></a>
     </div>
 
 </form>
 
 <script src="/js/editProduct.js"></script>
-
+</body>
 <%- include('../partials/linkWhatsApp') %>
 <%- include('../partials/footer') %>

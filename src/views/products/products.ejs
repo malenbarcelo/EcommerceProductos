@@ -28,7 +28,7 @@
                 <% } %>
             </div>
             <div class="div-add-to-cart">
-                <a href="/products/product-detail/<%= product.product_name %> " class="add-to-cart">Agregar al carrito</a>
+                <a href="/products/product-cart" class="add-to-cart">Agregar al carrito</a>
             </div>
 
             <div class="div-flex-edit-delete">
@@ -48,7 +48,7 @@
 
 <div class="div-pagination">
     <% for( let i = 0; i < allProducts.length/12; i++ ) { %>
-        <span class="span-pagination"><a href="/products/page<%= i+1 %>" class="a-pagination"><%= i + 1 %></a></span>     
+        <input type="button" value="<%= i + 1 %>" class="btn-pagination <%= pageNumber == (i + 1) ? 'active': null%>" onclick="location.href = '/products/page<%= i+1 %>'"" >
     <% } %>    
 </div>
 

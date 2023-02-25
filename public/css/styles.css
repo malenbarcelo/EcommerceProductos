@@ -68,6 +68,10 @@ header{
     margin-left:10px
 }
 
+.fa-cart-shopping{
+    color:black
+}
+
 /*CARROUSEL-------------------------------*/
 .carrousel{
     width: 100%;
@@ -186,7 +190,7 @@ footer{
     background-color: rgb(209, 201, 201);
     font-size: 13px;
     padding:10px;
-    margin-top:0px
+    margin-top:20px
 }
 
 .footer-quien-somos{
@@ -454,6 +458,7 @@ p{
 
     .fa-chevron-down{
         font-size: 13px;
+        padding-left:5px
     }
 
     .user-image{
@@ -517,11 +522,13 @@ p{
         display: flex;
         flex-direction: column;
         align-items: center;
-        width:250px;
+        width:550px;
+        
     }
 
     .footer-quien-somos b{
         margin-bottom: 5px;
+        
     }
 
 

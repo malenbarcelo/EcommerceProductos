@@ -1,3 +1,17 @@
+body{
+    background-color: rgb(250, 239, 239);
+}
+
+.body-delete-product{
+    background-color: white;
+
+}
+
+.body-edit-product{
+    background-color: white;
+
+}
+
 .products-title{
     text-align: center;
     font-size: 30px;
@@ -15,16 +29,16 @@
 }
 
 .product{
-    border-radius:20px;
-    border:grey solid 2px;
+    border-radius:5px;
     width:80vw;
     padding:5px;
     margin:auto;
     margin-bottom:10px;
+    background-color: white;
 }
 
 .product:hover{
-    border: black solid;
+    border: rgb(237, 197, 197) solid 2px;
     
 }
 
@@ -55,7 +69,7 @@
 .div-product-image{
     position:relative;
     text-align: center;
-    border-bottom: grey solid 1px;
+    border-bottom: rgb(235, 207, 212) solid 2px;
     padding-bottom:5px;
     padding-top:5px;
     position:relative
@@ -142,7 +156,29 @@
 }
 
 .div-pagination{
-    display:none
+    display:none;
+}
+
+.a-pagination{
+    color:black
+}
+
+.a-pagination:hover{
+    color:rgb(141, 139, 139);
+    text-decoration: none;
+}
+
+.btn-pagination{
+    background-color: rgb(250, 239, 239);
+    border:none
+}
+
+.active{
+    text-decoration: underline;
+}
+
+.div-product-not-found{
+    padding-bottom:350px
 }
 
 @media (min-width:478px){

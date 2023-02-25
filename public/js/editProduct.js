@@ -1,5 +1,5 @@
 //Función para eliminar clases y mensajes de express validator
-function modifyClasses(input,inputError,inputType){
+/*function modifyClasses(input,inputError,inputType){
 
     const inputToModify = document.querySelector('.' + input)
     inputToModify.classList.remove('is-invalid')
@@ -81,4 +81,4 @@ window.addEventListener("load",async()=>{
         }
 
     })
-})
+})*/

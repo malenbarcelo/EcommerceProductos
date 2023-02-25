@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        
+
 
         <div class="magnifying-glass"><i class="fa-solid fa-magnifying-glass"></i></div>
 
@@ -58,18 +58,22 @@
                 <ul class="submenu-users">
                     <% if (!locals.isLogged) { %>
                         <li class="submenu"><a href="/users/register">Registrarse</a></li>
-                        <li class="submenu"><a href="/users/login">Iniciar sesión</a></li>                        
+                        <li class="submenu"><a href="/users/login">Iniciar sesión</a></li>
                     <% } %>
-                    
+
                     <% if (locals.isLogged) { %>
                         <li class="submenu"><a href="/users/logout">Cerrar sesión</a></li>
-                        <li class="submenu"><a href="/users/profile">Mi perfil</a></li>                     
+                        <li class="submenu"><a href="/users/profile">Mi perfil</a></li>
+                    <% } %>
+                    <% if (locals.userLogged && locals.userLogged.user_category_id == 1) { %>
+                        <li class="submenu"><a href="/users/list">Ver usuarios</a></li>
                     <% } %>
                 </ul>
             </li>
             <% if (locals.userLogged && locals.userLogged.user_category_id == 1) { %>
-                <li><a href="/products/create-product">Crear Producto</a></li>                     
+                <li><a href="/products/create-product">Crear Producto</a></li>
             <% } %>
+
         </ul>
     </nav>
     <script src="/js/header.js"></script>
