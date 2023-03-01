@@ -15,7 +15,7 @@ const productFormsValidations = {
                         return true
                     }),
         body('description').notEmpty().withMessage('Ingrese una descripción')
-                           .isLength({min:10}).withMessage('La descripción debe tener al menos 10 carcateres'),
+                           .isLength({min:10}).withMessage('La descripción debe tener al menos 10 caracteres'),
         body('price')
             .notEmpty().withMessage('Ingrese el precio del producto').bail()
             .isNumeric().withMessage('El precio debe ser numérico'),
